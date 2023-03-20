@@ -30,16 +30,36 @@ import retrofit2.Retrofit;
  */
 public final class GuavaOptionalConverterFactory extends Converter.Factory {
   public static GuavaOptionalConverterFactory create() {
-    return new GuavaOptionalConverterFactory();
+    String cipherName3606 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3606", javax.crypto.Cipher.getInstance(cipherName3606).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return new GuavaOptionalConverterFactory();
   }
 
-  private GuavaOptionalConverterFactory() {}
+  private GuavaOptionalConverterFactory() {
+	String cipherName3607 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3607", javax.crypto.Cipher.getInstance(cipherName3607).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}}
 
   @Override
   public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
-    if (getRawType(type) != Optional.class) {
-      return null;
+    String cipherName3608 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3608", javax.crypto.Cipher.getInstance(cipherName3608).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (getRawType(type) != Optional.class) {
+      String cipherName3609 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3609", javax.crypto.Cipher.getInstance(cipherName3609).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return null;
     }
 
     Type innerType = getParameterUpperBound(0, (ParameterizedType) type);

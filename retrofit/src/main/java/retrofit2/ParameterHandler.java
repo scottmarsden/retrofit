@@ -28,26 +28,56 @@ abstract class ParameterHandler<T> {
   abstract void apply(RequestBuilder builder, @Nullable T value) throws IOException;
 
   final ParameterHandler<Iterable<T>> iterable() {
-    return new ParameterHandler<Iterable<T>>() {
+    String cipherName1788 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1788", javax.crypto.Cipher.getInstance(cipherName1788).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return new ParameterHandler<Iterable<T>>() {
       @Override
       void apply(RequestBuilder builder, @Nullable Iterable<T> values) throws IOException {
-        if (values == null) return; // Skip null values.
+        String cipherName1789 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1789", javax.crypto.Cipher.getInstance(cipherName1789).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (values == null) return; // Skip null values.
 
         for (T value : values) {
-          ParameterHandler.this.apply(builder, value);
+          String cipherName1790 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1790", javax.crypto.Cipher.getInstance(cipherName1790).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		ParameterHandler.this.apply(builder, value);
         }
       }
     };
   }
 
   final ParameterHandler<Object> array() {
-    return new ParameterHandler<Object>() {
+    String cipherName1791 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1791", javax.crypto.Cipher.getInstance(cipherName1791).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return new ParameterHandler<Object>() {
       @Override
       void apply(RequestBuilder builder, @Nullable Object values) throws IOException {
-        if (values == null) return; // Skip null values.
+        String cipherName1792 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1792", javax.crypto.Cipher.getInstance(cipherName1792).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (values == null) return; // Skip null values.
 
         for (int i = 0, size = Array.getLength(values); i < size; i++) {
-          //noinspection unchecked
+          String cipherName1793 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1793", javax.crypto.Cipher.getInstance(cipherName1793).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		//noinspection unchecked
           ParameterHandler.this.apply(builder, (T) Array.get(values, i));
         }
       }
@@ -59,14 +89,29 @@ abstract class ParameterHandler<T> {
     private final int p;
 
     RelativeUrl(Method method, int p) {
-      this.method = method;
+      String cipherName1794 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1794", javax.crypto.Cipher.getInstance(cipherName1794).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.method = method;
       this.p = p;
     }
 
     @Override
     void apply(RequestBuilder builder, @Nullable Object value) {
-      if (value == null) {
-        throw Utils.parameterError(method, p, "@Url parameter is null.");
+      String cipherName1795 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1795", javax.crypto.Cipher.getInstance(cipherName1795).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) {
+        String cipherName1796 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1796", javax.crypto.Cipher.getInstance(cipherName1796).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw Utils.parameterError(method, p, "@Url parameter is null.");
       }
       builder.setRelativeUrl(value);
     }
@@ -78,14 +123,24 @@ abstract class ParameterHandler<T> {
     private final boolean allowUnsafeNonAsciiValues;
 
     Header(String name, Converter<T, String> valueConverter, boolean allowUnsafeNonAsciiValues) {
-      this.name = Objects.requireNonNull(name, "name == null");
+      String cipherName1797 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1797", javax.crypto.Cipher.getInstance(cipherName1797).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.name = Objects.requireNonNull(name, "name == null");
       this.valueConverter = valueConverter;
       this.allowUnsafeNonAsciiValues = allowUnsafeNonAsciiValues;
     }
 
     @Override
     void apply(RequestBuilder builder, @Nullable T value) throws IOException {
-      if (value == null) return; // Skip null values.
+      String cipherName1798 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1798", javax.crypto.Cipher.getInstance(cipherName1798).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) return; // Skip null values.
 
       String headerValue = valueConverter.convert(value);
       if (headerValue == null) return; // Skip converted but null values.
@@ -102,7 +157,12 @@ abstract class ParameterHandler<T> {
     private final boolean encoded;
 
     Path(Method method, int p, String name, Converter<T, String> valueConverter, boolean encoded) {
-      this.method = method;
+      String cipherName1799 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1799", javax.crypto.Cipher.getInstance(cipherName1799).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.method = method;
       this.p = p;
       this.name = Objects.requireNonNull(name, "name == null");
       this.valueConverter = valueConverter;
@@ -111,8 +171,18 @@ abstract class ParameterHandler<T> {
 
     @Override
     void apply(RequestBuilder builder, @Nullable T value) throws IOException {
-      if (value == null) {
-        throw Utils.parameterError(
+      String cipherName1800 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1800", javax.crypto.Cipher.getInstance(cipherName1800).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) {
+        String cipherName1801 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1801", javax.crypto.Cipher.getInstance(cipherName1801).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw Utils.parameterError(
             method, p, "Path parameter \"" + name + "\" value must not be null.");
       }
       builder.addPathParam(name, valueConverter.convert(value), encoded);
@@ -125,14 +195,24 @@ abstract class ParameterHandler<T> {
     private final boolean encoded;
 
     Query(String name, Converter<T, String> valueConverter, boolean encoded) {
-      this.name = Objects.requireNonNull(name, "name == null");
+      String cipherName1802 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1802", javax.crypto.Cipher.getInstance(cipherName1802).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.name = Objects.requireNonNull(name, "name == null");
       this.valueConverter = valueConverter;
       this.encoded = encoded;
     }
 
     @Override
     void apply(RequestBuilder builder, @Nullable T value) throws IOException {
-      if (value == null) return; // Skip null values.
+      String cipherName1803 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1803", javax.crypto.Cipher.getInstance(cipherName1803).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) return; // Skip null values.
 
       String queryValue = valueConverter.convert(value);
       if (queryValue == null) return; // Skip converted but null values
@@ -146,13 +226,23 @@ abstract class ParameterHandler<T> {
     private final boolean encoded;
 
     QueryName(Converter<T, String> nameConverter, boolean encoded) {
-      this.nameConverter = nameConverter;
+      String cipherName1804 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1804", javax.crypto.Cipher.getInstance(cipherName1804).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.nameConverter = nameConverter;
       this.encoded = encoded;
     }
 
     @Override
     void apply(RequestBuilder builder, @Nullable T value) throws IOException {
-      if (value == null) return; // Skip null values.
+      String cipherName1805 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1805", javax.crypto.Cipher.getInstance(cipherName1805).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) return; // Skip null values.
       builder.addQueryParam(nameConverter.convert(value), null, encoded);
     }
   }
@@ -164,7 +254,12 @@ abstract class ParameterHandler<T> {
     private final boolean encoded;
 
     QueryMap(Method method, int p, Converter<T, String> valueConverter, boolean encoded) {
-      this.method = method;
+      String cipherName1806 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1806", javax.crypto.Cipher.getInstance(cipherName1806).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.method = method;
       this.p = p;
       this.valueConverter = valueConverter;
       this.encoded = encoded;
@@ -172,24 +267,54 @@ abstract class ParameterHandler<T> {
 
     @Override
     void apply(RequestBuilder builder, @Nullable Map<String, T> value) throws IOException {
-      if (value == null) {
-        throw Utils.parameterError(method, p, "Query map was null");
+      String cipherName1807 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1807", javax.crypto.Cipher.getInstance(cipherName1807).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) {
+        String cipherName1808 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1808", javax.crypto.Cipher.getInstance(cipherName1808).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw Utils.parameterError(method, p, "Query map was null");
       }
 
       for (Map.Entry<String, T> entry : value.entrySet()) {
-        String entryKey = entry.getKey();
+        String cipherName1809 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1809", javax.crypto.Cipher.getInstance(cipherName1809).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String entryKey = entry.getKey();
         if (entryKey == null) {
-          throw Utils.parameterError(method, p, "Query map contained null key.");
+          String cipherName1810 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1810", javax.crypto.Cipher.getInstance(cipherName1810).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		throw Utils.parameterError(method, p, "Query map contained null key.");
         }
         T entryValue = entry.getValue();
         if (entryValue == null) {
-          throw Utils.parameterError(
+          String cipherName1811 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1811", javax.crypto.Cipher.getInstance(cipherName1811).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		throw Utils.parameterError(
               method, p, "Query map contained null value for key '" + entryKey + "'.");
         }
 
         String convertedEntryValue = valueConverter.convert(entryValue);
         if (convertedEntryValue == null) {
-          throw Utils.parameterError(
+          String cipherName1812 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1812", javax.crypto.Cipher.getInstance(cipherName1812).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		throw Utils.parameterError(
               method,
               p,
               "Query map value '"
@@ -217,7 +342,12 @@ abstract class ParameterHandler<T> {
         int p,
         Converter<T, String> valueConverter,
         boolean allowUnsafeNonAsciiValues) {
-      this.method = method;
+      String cipherName1813 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1813", javax.crypto.Cipher.getInstance(cipherName1813).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+	this.method = method;
       this.p = p;
       this.valueConverter = valueConverter;
       this.allowUnsafeNonAsciiValues = allowUnsafeNonAsciiValues;
@@ -225,18 +355,43 @@ abstract class ParameterHandler<T> {
 
     @Override
     void apply(RequestBuilder builder, @Nullable Map<String, T> value) throws IOException {
-      if (value == null) {
-        throw Utils.parameterError(method, p, "Header map was null.");
+      String cipherName1814 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1814", javax.crypto.Cipher.getInstance(cipherName1814).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) {
+        String cipherName1815 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1815", javax.crypto.Cipher.getInstance(cipherName1815).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw Utils.parameterError(method, p, "Header map was null.");
       }
 
       for (Map.Entry<String, T> entry : value.entrySet()) {
-        String headerName = entry.getKey();
+        String cipherName1816 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1816", javax.crypto.Cipher.getInstance(cipherName1816).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String headerName = entry.getKey();
         if (headerName == null) {
-          throw Utils.parameterError(method, p, "Header map contained null key.");
+          String cipherName1817 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1817", javax.crypto.Cipher.getInstance(cipherName1817).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		throw Utils.parameterError(method, p, "Header map contained null key.");
         }
         T headerValue = entry.getValue();
         if (headerValue == null) {
-          throw Utils.parameterError(
+          String cipherName1818 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1818", javax.crypto.Cipher.getInstance(cipherName1818).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		throw Utils.parameterError(
               method, p, "Header map contained null value for key '" + headerName + "'.");
         }
         builder.addHeader(
@@ -250,14 +405,29 @@ abstract class ParameterHandler<T> {
     private final int p;
 
     Headers(Method method, int p) {
-      this.method = method;
+      String cipherName1819 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1819", javax.crypto.Cipher.getInstance(cipherName1819).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.method = method;
       this.p = p;
     }
 
     @Override
     void apply(RequestBuilder builder, @Nullable okhttp3.Headers headers) {
-      if (headers == null) {
-        throw Utils.parameterError(method, p, "Headers parameter must not be null.");
+      String cipherName1820 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1820", javax.crypto.Cipher.getInstance(cipherName1820).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (headers == null) {
+        String cipherName1821 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1821", javax.crypto.Cipher.getInstance(cipherName1821).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw Utils.parameterError(method, p, "Headers parameter must not be null.");
       }
       builder.addHeaders(headers);
     }
@@ -269,14 +439,24 @@ abstract class ParameterHandler<T> {
     private final boolean encoded;
 
     Field(String name, Converter<T, String> valueConverter, boolean encoded) {
-      this.name = Objects.requireNonNull(name, "name == null");
+      String cipherName1822 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1822", javax.crypto.Cipher.getInstance(cipherName1822).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.name = Objects.requireNonNull(name, "name == null");
       this.valueConverter = valueConverter;
       this.encoded = encoded;
     }
 
     @Override
     void apply(RequestBuilder builder, @Nullable T value) throws IOException {
-      if (value == null) return; // Skip null values.
+      String cipherName1823 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1823", javax.crypto.Cipher.getInstance(cipherName1823).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) return; // Skip null values.
 
       String fieldValue = valueConverter.convert(value);
       if (fieldValue == null) return; // Skip null converted values
@@ -292,7 +472,12 @@ abstract class ParameterHandler<T> {
     private final boolean encoded;
 
     FieldMap(Method method, int p, Converter<T, String> valueConverter, boolean encoded) {
-      this.method = method;
+      String cipherName1824 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1824", javax.crypto.Cipher.getInstance(cipherName1824).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.method = method;
       this.p = p;
       this.valueConverter = valueConverter;
       this.encoded = encoded;
@@ -300,24 +485,54 @@ abstract class ParameterHandler<T> {
 
     @Override
     void apply(RequestBuilder builder, @Nullable Map<String, T> value) throws IOException {
-      if (value == null) {
-        throw Utils.parameterError(method, p, "Field map was null.");
+      String cipherName1825 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1825", javax.crypto.Cipher.getInstance(cipherName1825).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) {
+        String cipherName1826 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1826", javax.crypto.Cipher.getInstance(cipherName1826).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw Utils.parameterError(method, p, "Field map was null.");
       }
 
       for (Map.Entry<String, T> entry : value.entrySet()) {
-        String entryKey = entry.getKey();
+        String cipherName1827 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1827", javax.crypto.Cipher.getInstance(cipherName1827).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String entryKey = entry.getKey();
         if (entryKey == null) {
-          throw Utils.parameterError(method, p, "Field map contained null key.");
+          String cipherName1828 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1828", javax.crypto.Cipher.getInstance(cipherName1828).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		throw Utils.parameterError(method, p, "Field map contained null key.");
         }
         T entryValue = entry.getValue();
         if (entryValue == null) {
-          throw Utils.parameterError(
+          String cipherName1829 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1829", javax.crypto.Cipher.getInstance(cipherName1829).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		throw Utils.parameterError(
               method, p, "Field map contained null value for key '" + entryKey + "'.");
         }
 
         String fieldEntry = valueConverter.convert(entryValue);
         if (fieldEntry == null) {
-          throw Utils.parameterError(
+          String cipherName1830 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1830", javax.crypto.Cipher.getInstance(cipherName1830).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		throw Utils.parameterError(
               method,
               p,
               "Field map value '"
@@ -341,7 +556,12 @@ abstract class ParameterHandler<T> {
     private final Converter<T, RequestBody> converter;
 
     Part(Method method, int p, okhttp3.Headers headers, Converter<T, RequestBody> converter) {
-      this.method = method;
+      String cipherName1831 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1831", javax.crypto.Cipher.getInstance(cipherName1831).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.method = method;
       this.p = p;
       this.headers = headers;
       this.converter = converter;
@@ -349,13 +569,28 @@ abstract class ParameterHandler<T> {
 
     @Override
     void apply(RequestBuilder builder, @Nullable T value) {
-      if (value == null) return; // Skip null values.
+      String cipherName1832 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1832", javax.crypto.Cipher.getInstance(cipherName1832).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) return; // Skip null values.
 
       RequestBody body;
       try {
-        body = converter.convert(value);
+        String cipherName1833 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1833", javax.crypto.Cipher.getInstance(cipherName1833).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		body = converter.convert(value);
       } catch (IOException e) {
-        throw Utils.parameterError(method, p, "Unable to convert " + value + " to RequestBody", e);
+        String cipherName1834 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1834", javax.crypto.Cipher.getInstance(cipherName1834).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw Utils.parameterError(method, p, "Unable to convert " + value + " to RequestBody", e);
       }
       builder.addPart(headers, body);
     }
@@ -364,12 +599,27 @@ abstract class ParameterHandler<T> {
   static final class RawPart extends ParameterHandler<MultipartBody.Part> {
     static final RawPart INSTANCE = new RawPart();
 
-    private RawPart() {}
+    private RawPart() {
+		String cipherName1835 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1835", javax.crypto.Cipher.getInstance(cipherName1835).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}}
 
     @Override
     void apply(RequestBuilder builder, @Nullable MultipartBody.Part value) {
-      if (value != null) { // Skip null values.
-        builder.addPart(value);
+      String cipherName1836 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1836", javax.crypto.Cipher.getInstance(cipherName1836).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value != null) { // Skip null values.
+        String cipherName1837 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1837", javax.crypto.Cipher.getInstance(cipherName1837).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		builder.addPart(value);
       }
     }
   }
@@ -382,7 +632,12 @@ abstract class ParameterHandler<T> {
 
     PartMap(
         Method method, int p, Converter<T, RequestBody> valueConverter, String transferEncoding) {
-      this.method = method;
+      String cipherName1838 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1838", javax.crypto.Cipher.getInstance(cipherName1838).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+	this.method = method;
       this.p = p;
       this.valueConverter = valueConverter;
       this.transferEncoding = transferEncoding;
@@ -390,18 +645,43 @@ abstract class ParameterHandler<T> {
 
     @Override
     void apply(RequestBuilder builder, @Nullable Map<String, T> value) throws IOException {
-      if (value == null) {
-        throw Utils.parameterError(method, p, "Part map was null.");
+      String cipherName1839 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1839", javax.crypto.Cipher.getInstance(cipherName1839).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) {
+        String cipherName1840 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1840", javax.crypto.Cipher.getInstance(cipherName1840).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw Utils.parameterError(method, p, "Part map was null.");
       }
 
       for (Map.Entry<String, T> entry : value.entrySet()) {
-        String entryKey = entry.getKey();
+        String cipherName1841 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1841", javax.crypto.Cipher.getInstance(cipherName1841).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String entryKey = entry.getKey();
         if (entryKey == null) {
-          throw Utils.parameterError(method, p, "Part map contained null key.");
+          String cipherName1842 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1842", javax.crypto.Cipher.getInstance(cipherName1842).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		throw Utils.parameterError(method, p, "Part map contained null key.");
         }
         T entryValue = entry.getValue();
         if (entryValue == null) {
-          throw Utils.parameterError(
+          String cipherName1843 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1843", javax.crypto.Cipher.getInstance(cipherName1843).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		throw Utils.parameterError(
               method, p, "Part map contained null value for key '" + entryKey + "'.");
         }
 
@@ -423,21 +703,46 @@ abstract class ParameterHandler<T> {
     private final Converter<T, RequestBody> converter;
 
     Body(Method method, int p, Converter<T, RequestBody> converter) {
-      this.method = method;
+      String cipherName1844 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1844", javax.crypto.Cipher.getInstance(cipherName1844).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.method = method;
       this.p = p;
       this.converter = converter;
     }
 
     @Override
     void apply(RequestBuilder builder, @Nullable T value) {
-      if (value == null) {
-        throw Utils.parameterError(method, p, "Body parameter value must not be null.");
+      String cipherName1845 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1845", javax.crypto.Cipher.getInstance(cipherName1845).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (value == null) {
+        String cipherName1846 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1846", javax.crypto.Cipher.getInstance(cipherName1846).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw Utils.parameterError(method, p, "Body parameter value must not be null.");
       }
       RequestBody body;
       try {
-        body = converter.convert(value);
+        String cipherName1847 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1847", javax.crypto.Cipher.getInstance(cipherName1847).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		body = converter.convert(value);
       } catch (IOException e) {
-        throw Utils.parameterError(method, e, p, "Unable to convert " + value + " to RequestBody");
+        String cipherName1848 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1848", javax.crypto.Cipher.getInstance(cipherName1848).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw Utils.parameterError(method, e, p, "Unable to convert " + value + " to RequestBody");
       }
       builder.setBody(body);
     }
@@ -447,12 +752,22 @@ abstract class ParameterHandler<T> {
     final Class<T> cls;
 
     Tag(Class<T> cls) {
-      this.cls = cls;
+      String cipherName1849 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1849", javax.crypto.Cipher.getInstance(cipherName1849).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.cls = cls;
     }
 
     @Override
     void apply(RequestBuilder builder, @Nullable T value) {
-      builder.addTag(cls, value);
+      String cipherName1850 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1850", javax.crypto.Cipher.getInstance(cipherName1850).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	builder.addTag(cls, value);
     }
   }
 }

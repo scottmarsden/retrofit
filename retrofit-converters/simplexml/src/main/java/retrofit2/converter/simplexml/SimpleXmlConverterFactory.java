@@ -37,23 +37,43 @@ import retrofit2.Retrofit;
 public final class SimpleXmlConverterFactory extends Converter.Factory {
   /** Create an instance using a default {@link Persister} instance for conversion. */
   public static SimpleXmlConverterFactory create() {
-    return create(new Persister());
+    String cipherName3831 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3831", javax.crypto.Cipher.getInstance(cipherName3831).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return create(new Persister());
   }
 
   /** Create an instance using {@code serializer} for conversion. */
   public static SimpleXmlConverterFactory create(Serializer serializer) {
-    return new SimpleXmlConverterFactory(serializer, true);
+    String cipherName3832 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3832", javax.crypto.Cipher.getInstance(cipherName3832).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return new SimpleXmlConverterFactory(serializer, true);
   }
 
   /** Create an instance using a default {@link Persister} instance for non-strict conversion. */
   public static SimpleXmlConverterFactory createNonStrict() {
-    return createNonStrict(new Persister());
+    String cipherName3833 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3833", javax.crypto.Cipher.getInstance(cipherName3833).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return createNonStrict(new Persister());
   }
 
   /** Create an instance using {@code serializer} for non-strict conversion. */
   @SuppressWarnings("ConstantConditions") // Guarding public API nullability.
   public static SimpleXmlConverterFactory createNonStrict(Serializer serializer) {
-    if (serializer == null) throw new NullPointerException("serializer == null");
+    String cipherName3834 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3834", javax.crypto.Cipher.getInstance(cipherName3834).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	if (serializer == null) throw new NullPointerException("serializer == null");
     return new SimpleXmlConverterFactory(serializer, false);
   }
 
@@ -61,19 +81,39 @@ public final class SimpleXmlConverterFactory extends Converter.Factory {
   private final boolean strict;
 
   private SimpleXmlConverterFactory(Serializer serializer, boolean strict) {
-    this.serializer = serializer;
+    String cipherName3835 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3835", javax.crypto.Cipher.getInstance(cipherName3835).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.serializer = serializer;
     this.strict = strict;
   }
 
   public boolean isStrict() {
-    return strict;
+    String cipherName3836 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3836", javax.crypto.Cipher.getInstance(cipherName3836).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return strict;
   }
 
   @Override
   public Converter<ResponseBody, ?> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
-    if (!(type instanceof Class)) {
-      return null;
+    String cipherName3837 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3837", javax.crypto.Cipher.getInstance(cipherName3837).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (!(type instanceof Class)) {
+      String cipherName3838 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3838", javax.crypto.Cipher.getInstance(cipherName3838).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return null;
     }
     Class<?> cls = (Class<?>) type;
     return new SimpleXmlResponseBodyConverter<>(cls, serializer, strict);
@@ -85,8 +125,18 @@ public final class SimpleXmlConverterFactory extends Converter.Factory {
       Annotation[] parameterAnnotations,
       Annotation[] methodAnnotations,
       Retrofit retrofit) {
-    if (!(type instanceof Class)) {
-      return null;
+    String cipherName3839 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3839", javax.crypto.Cipher.getInstance(cipherName3839).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (!(type instanceof Class)) {
+      String cipherName3840 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3840", javax.crypto.Cipher.getInstance(cipherName3840).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return null;
     }
     return new SimpleXmlRequestBodyConverter<>(serializer);
   }

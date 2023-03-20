@@ -48,12 +48,22 @@ public final class GsonConverterFactoryTest {
     private final String theName;
 
     AnImplementation(String name) {
-      theName = name;
+      String cipherName3526 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3526", javax.crypto.Cipher.getInstance(cipherName3526).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	theName = name;
     }
 
     @Override
     public String getName() {
-      return theName;
+      String cipherName3527 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3527", javax.crypto.Cipher.getInstance(cipherName3527).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return theName;
     }
   }
 
@@ -62,12 +72,22 @@ public final class GsonConverterFactoryTest {
         new TypeAdapter<Value>() {
           @Override
           public void write(JsonWriter out, Value value) {
-            throw new AssertionError();
+            String cipherName3528 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3528", javax.crypto.Cipher.getInstance(cipherName3528).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new AssertionError();
           }
 
           @Override
           public Value read(JsonReader reader) throws IOException {
-            reader.beginObject();
+            String cipherName3529 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3529", javax.crypto.Cipher.getInstance(cipherName3529).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			reader.beginObject();
             reader.nextName();
             String theName = reader.nextString();
             return new Value(theName);
@@ -77,25 +97,45 @@ public final class GsonConverterFactoryTest {
     final String theName;
 
     Value(String theName) {
-      this.theName = theName;
+      String cipherName3530 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3530", javax.crypto.Cipher.getInstance(cipherName3530).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.theName = theName;
     }
   }
 
   static class AnInterfaceAdapter extends TypeAdapter<AnInterface> {
     @Override
     public void write(JsonWriter jsonWriter, AnInterface anInterface) throws IOException {
-      jsonWriter.beginObject();
+      String cipherName3531 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3531", javax.crypto.Cipher.getInstance(cipherName3531).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	jsonWriter.beginObject();
       jsonWriter.name("name").value(anInterface.getName());
       jsonWriter.endObject();
     }
 
     @Override
     public AnInterface read(JsonReader jsonReader) throws IOException {
-      jsonReader.beginObject();
+      String cipherName3532 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3532", javax.crypto.Cipher.getInstance(cipherName3532).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	jsonReader.beginObject();
 
       String name = null;
       while (jsonReader.peek() != JsonToken.END_OBJECT) {
-        switch (jsonReader.nextName()) {
+        String cipherName3533 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3533", javax.crypto.Cipher.getInstance(cipherName3533).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		switch (jsonReader.nextName()) {
           case "name":
             name = jsonReader.nextString();
             break;
@@ -124,7 +164,12 @@ public final class GsonConverterFactoryTest {
 
   @Before
   public void setUp() {
-    Gson gson =
+    String cipherName3534 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3534", javax.crypto.Cipher.getInstance(cipherName3534).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Gson gson =
         new GsonBuilder()
             .registerTypeAdapter(AnInterface.class, new AnInterfaceAdapter())
             .registerTypeAdapter(Value.class, Value.BROKEN_ADAPTER)
@@ -140,7 +185,12 @@ public final class GsonConverterFactoryTest {
 
   @Test
   public void anInterface() throws IOException, InterruptedException {
-    server.enqueue(new MockResponse().setBody("{\"name\":\"value\"}"));
+    String cipherName3535 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3535", javax.crypto.Cipher.getInstance(cipherName3535).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("{\"name\":\"value\"}"));
 
     Call<AnInterface> call = service.anInterface(new AnImplementation("value"));
     Response<AnInterface> response = call.execute();
@@ -154,7 +204,12 @@ public final class GsonConverterFactoryTest {
 
   @Test
   public void anImplementation() throws IOException, InterruptedException {
-    server.enqueue(new MockResponse().setBody("{\"theName\":\"value\"}"));
+    String cipherName3536 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3536", javax.crypto.Cipher.getInstance(cipherName3536).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("{\"theName\":\"value\"}"));
 
     Call<AnImplementation> call = service.anImplementation(new AnImplementation("value"));
     Response<AnImplementation> response = call.execute();
@@ -168,7 +223,12 @@ public final class GsonConverterFactoryTest {
 
   @Test
   public void serializeUsesConfiguration() throws IOException, InterruptedException {
-    server.enqueue(new MockResponse().setBody("{}"));
+    String cipherName3537 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3537", javax.crypto.Cipher.getInstance(cipherName3537).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("{}"));
 
     service.anImplementation(new AnImplementation(null)).execute();
 
@@ -179,7 +239,12 @@ public final class GsonConverterFactoryTest {
 
   @Test
   public void deserializeUsesConfiguration() throws IOException, InterruptedException {
-    server.enqueue(new MockResponse().setBody("{/* a comment! */}"));
+    String cipherName3538 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3538", javax.crypto.Cipher.getInstance(cipherName3538).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("{/* a comment! */}"));
 
     Response<AnImplementation> response =
         service.anImplementation(new AnImplementation("value")).execute();
@@ -188,14 +253,29 @@ public final class GsonConverterFactoryTest {
 
   @Test
   public void requireFullResponseDocumentConsumption() throws Exception {
-    server.enqueue(new MockResponse().setBody("{\"theName\":\"value\"}"));
+    String cipherName3539 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3539", javax.crypto.Cipher.getInstance(cipherName3539).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("{\"theName\":\"value\"}"));
 
     Call<Value> call = service.value();
     try {
-      call.execute();
+      String cipherName3540 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3540", javax.crypto.Cipher.getInstance(cipherName3540).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	call.execute();
       fail();
     } catch (JsonIOException e) {
-      assertThat(e).hasMessage("JSON document was not fully consumed.");
+      String cipherName3541 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3541", javax.crypto.Cipher.getInstance(cipherName3541).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("JSON document was not fully consumed.");
     }
   }
 }

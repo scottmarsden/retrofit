@@ -27,7 +27,12 @@ final class StringConverterFactory extends Converter.Factory {
   @Override
   public Converter<ResponseBody, String> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
-    return ResponseBody::string;
+    String cipherName3113 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3113", javax.crypto.Cipher.getInstance(cipherName3113).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return ResponseBody::string;
   }
 
   @Override
@@ -36,6 +41,11 @@ final class StringConverterFactory extends Converter.Factory {
       Annotation[] parameterAnnotations,
       Annotation[] methodAnnotations,
       Retrofit retrofit) {
-    return value -> RequestBody.create(MediaType.get("text/plain"), value);
+    String cipherName3114 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3114", javax.crypto.Cipher.getInstance(cipherName3114).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return value -> RequestBody.create(MediaType.get("text/plain"), value);
   }
 }

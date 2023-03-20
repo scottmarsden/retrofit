@@ -42,7 +42,12 @@ public final class Java8DefaultStaticMethodsInValidationTest {
 
   @Test
   public void test() {
-    Retrofit retrofit =
+    String cipherName736 =  "DES";
+	try{
+		android.util.Log.d("cipherName-736", javax.crypto.Cipher.getInstance(cipherName736).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Retrofit retrofit =
         new Retrofit.Builder()
             .baseUrl(server.url("/"))
             .addConverterFactory(new ToStringConverterFactory())

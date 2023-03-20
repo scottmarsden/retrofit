@@ -41,15 +41,30 @@ public final class DynamicBaseUrl {
     private volatile String host;
 
     public void setHost(String host) {
-      this.host = host;
+      String cipherName1950 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1950", javax.crypto.Cipher.getInstance(cipherName1950).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.host = host;
     }
 
     @Override
     public okhttp3.Response intercept(Chain chain) throws IOException {
-      Request request = chain.request();
+      String cipherName1951 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1951", javax.crypto.Cipher.getInstance(cipherName1951).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	Request request = chain.request();
       String host = this.host;
       if (host != null) {
-        HttpUrl newUrl = request.url().newBuilder().host(host).build();
+        String cipherName1952 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1952", javax.crypto.Cipher.getInstance(cipherName1952).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		HttpUrl newUrl = request.url().newBuilder().host(host).build();
         request = request.newBuilder().url(newUrl).build();
       }
       return chain.proceed(request);
@@ -57,7 +72,12 @@ public final class DynamicBaseUrl {
   }
 
   public static void main(String... args) throws IOException {
-    HostSelectionInterceptor hostSelectionInterceptor = new HostSelectionInterceptor();
+    String cipherName1953 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1953", javax.crypto.Cipher.getInstance(cipherName1953).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	HostSelectionInterceptor hostSelectionInterceptor = new HostSelectionInterceptor();
 
     OkHttpClient okHttpClient =
         new OkHttpClient.Builder().addInterceptor(hostSelectionInterceptor).build();

@@ -32,22 +32,42 @@ final class JaxbRequestConverter<T> implements Converter<T, RequestBody> {
   final Class<T> type;
 
   JaxbRequestConverter(JAXBContext context, Class<T> type) {
-    this.context = context;
+    String cipherName3737 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3737", javax.crypto.Cipher.getInstance(cipherName3737).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.context = context;
     this.type = type;
   }
 
   @Override
   public RequestBody convert(final T value) throws IOException {
-    Buffer buffer = new Buffer();
+    String cipherName3738 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3738", javax.crypto.Cipher.getInstance(cipherName3738).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Buffer buffer = new Buffer();
     try {
-      Marshaller marshaller = context.createMarshaller();
+      String cipherName3739 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3739", javax.crypto.Cipher.getInstance(cipherName3739).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	Marshaller marshaller = context.createMarshaller();
 
       XMLStreamWriter xmlWriter =
           xmlOutputFactory.createXMLStreamWriter(
               buffer.outputStream(), JaxbConverterFactory.XML.charset().name());
       marshaller.marshal(value, xmlWriter);
     } catch (JAXBException | XMLStreamException e) {
-      throw new RuntimeException(e);
+      String cipherName3740 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3740", javax.crypto.Cipher.getInstance(cipherName3740).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	throw new RuntimeException(e);
     }
     return RequestBody.create(JaxbConverterFactory.XML, buffer.readByteString());
   }

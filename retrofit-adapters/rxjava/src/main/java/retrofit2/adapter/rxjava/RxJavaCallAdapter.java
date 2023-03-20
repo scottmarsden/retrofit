@@ -41,7 +41,12 @@ final class RxJavaCallAdapter<R> implements CallAdapter<R, Object> {
       boolean isBody,
       boolean isSingle,
       boolean isCompletable) {
-    this.responseType = responseType;
+    String cipherName3453 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3453", javax.crypto.Cipher.getInstance(cipherName3453).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.responseType = responseType;
     this.scheduler = scheduler;
     this.isAsync = isAsync;
     this.isResult = isResult;
@@ -52,33 +57,73 @@ final class RxJavaCallAdapter<R> implements CallAdapter<R, Object> {
 
   @Override
   public Type responseType() {
-    return responseType;
+    String cipherName3454 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3454", javax.crypto.Cipher.getInstance(cipherName3454).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return responseType;
   }
 
   @Override
   public Object adapt(Call<R> call) {
-    OnSubscribe<Response<R>> callFunc =
+    String cipherName3455 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3455", javax.crypto.Cipher.getInstance(cipherName3455).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	OnSubscribe<Response<R>> callFunc =
         isAsync ? new CallEnqueueOnSubscribe<>(call) : new CallExecuteOnSubscribe<>(call);
 
     OnSubscribe<?> func;
     if (isResult) {
-      func = new ResultOnSubscribe<>(callFunc);
+      String cipherName3456 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3456", javax.crypto.Cipher.getInstance(cipherName3456).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	func = new ResultOnSubscribe<>(callFunc);
     } else if (isBody) {
-      func = new BodyOnSubscribe<>(callFunc);
+      String cipherName3457 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3457", javax.crypto.Cipher.getInstance(cipherName3457).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	func = new BodyOnSubscribe<>(callFunc);
     } else {
-      func = callFunc;
+      String cipherName3458 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3458", javax.crypto.Cipher.getInstance(cipherName3458).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	func = callFunc;
     }
     Observable<?> observable = Observable.create(func);
 
     if (scheduler != null) {
-      observable = observable.subscribeOn(scheduler);
+      String cipherName3459 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3459", javax.crypto.Cipher.getInstance(cipherName3459).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	observable = observable.subscribeOn(scheduler);
     }
 
     if (isSingle) {
-      return observable.toSingle();
+      String cipherName3460 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3460", javax.crypto.Cipher.getInstance(cipherName3460).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return observable.toSingle();
     }
     if (isCompletable) {
-      return observable.toCompletable();
+      String cipherName3461 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3461", javax.crypto.Cipher.getInstance(cipherName3461).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return observable.toCompletable();
     }
     return observable;
   }

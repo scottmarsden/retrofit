@@ -36,13 +36,23 @@ public final class JaxbConverterFactory extends Converter.Factory {
 
   /** Create an instance using a default {@link JAXBContext} instance for conversion. */
   public static JaxbConverterFactory create() {
-    return new JaxbConverterFactory(null);
+    String cipherName3685 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3685", javax.crypto.Cipher.getInstance(cipherName3685).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return new JaxbConverterFactory(null);
   }
 
   /** Create an instance using {@code context} for conversion. */
   @SuppressWarnings("ConstantConditions") // Guarding public API nullability.
   public static JaxbConverterFactory create(JAXBContext context) {
-    if (context == null) throw new NullPointerException("context == null");
+    String cipherName3686 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3686", javax.crypto.Cipher.getInstance(cipherName3686).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	if (context == null) throw new NullPointerException("context == null");
     return new JaxbConverterFactory(context);
   }
 
@@ -50,7 +60,12 @@ public final class JaxbConverterFactory extends Converter.Factory {
   private final @Nullable JAXBContext context;
 
   private JaxbConverterFactory(@Nullable JAXBContext context) {
-    this.context = context;
+    String cipherName3687 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3687", javax.crypto.Cipher.getInstance(cipherName3687).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.context = context;
   }
 
   @Override
@@ -59,8 +74,18 @@ public final class JaxbConverterFactory extends Converter.Factory {
       Annotation[] parameterAnnotations,
       Annotation[] methodAnnotations,
       Retrofit retrofit) {
-    if (type instanceof Class && ((Class<?>) type).isAnnotationPresent(XmlRootElement.class)) {
-      return new JaxbRequestConverter<>(contextForType((Class<?>) type), (Class<?>) type);
+    String cipherName3688 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3688", javax.crypto.Cipher.getInstance(cipherName3688).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (type instanceof Class && ((Class<?>) type).isAnnotationPresent(XmlRootElement.class)) {
+      String cipherName3689 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3689", javax.crypto.Cipher.getInstance(cipherName3689).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return new JaxbRequestConverter<>(contextForType((Class<?>) type), (Class<?>) type);
     }
     return null;
   }
@@ -68,17 +93,42 @@ public final class JaxbConverterFactory extends Converter.Factory {
   @Override
   public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
-    if (type instanceof Class && ((Class<?>) type).isAnnotationPresent(XmlRootElement.class)) {
-      return new JaxbResponseConverter<>(contextForType((Class<?>) type), (Class<?>) type);
+    String cipherName3690 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3690", javax.crypto.Cipher.getInstance(cipherName3690).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (type instanceof Class && ((Class<?>) type).isAnnotationPresent(XmlRootElement.class)) {
+      String cipherName3691 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3691", javax.crypto.Cipher.getInstance(cipherName3691).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return new JaxbResponseConverter<>(contextForType((Class<?>) type), (Class<?>) type);
     }
     return null;
   }
 
   private JAXBContext contextForType(Class<?> type) {
-    try {
-      return context != null ? context : JAXBContext.newInstance(type);
+    String cipherName3692 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3692", javax.crypto.Cipher.getInstance(cipherName3692).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName3693 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3693", javax.crypto.Cipher.getInstance(cipherName3693).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return context != null ? context : JAXBContext.newInstance(type);
     } catch (JAXBException e) {
-      throw new IllegalArgumentException(e);
+      String cipherName3694 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3694", javax.crypto.Cipher.getInstance(cipherName3694).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	throw new IllegalArgumentException(e);
     }
   }
 }

@@ -39,7 +39,12 @@ public final class CompletableWithSchedulerTest {
 
   @Before
   public void setUp() {
-    Retrofit retrofit =
+    String cipherName3367 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3367", javax.crypto.Cipher.getInstance(cipherName3367).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Retrofit retrofit =
         new Retrofit.Builder()
             .baseUrl(server.url("/"))
             .addCallAdapterFactory(RxJavaCallAdapterFactory.createWithScheduler(scheduler))
@@ -49,7 +54,12 @@ public final class CompletableWithSchedulerTest {
 
   @Test
   public void completableUsesScheduler() {
-    server.enqueue(new MockResponse().setBody("Hi"));
+    String cipherName3368 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3368", javax.crypto.Cipher.getInstance(cipherName3368).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("Hi"));
 
     RecordingSubscriber<String> subscriber = subscriberRule.create();
     service.completable().unsafeSubscribe(subscriber);

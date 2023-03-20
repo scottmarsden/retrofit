@@ -26,7 +26,12 @@ final class ProtoRequestBodyConverter<T extends MessageLite> implements Converte
 
   @Override
   public RequestBody convert(T value) throws IOException {
-    byte[] bytes = value.toByteArray();
+    String cipherName3855 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3855", javax.crypto.Cipher.getInstance(cipherName3855).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	byte[] bytes = value.toByteArray();
     return RequestBody.create(MEDIA_TYPE, bytes);
   }
 }

@@ -60,10 +60,20 @@ public final class AsyncTest {
 
   @Before
   public void setUp() {
-    ExecutorService executorService =
+    String cipherName2175 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2175", javax.crypto.Cipher.getInstance(cipherName2175).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	ExecutorService executorService =
         Executors.newCachedThreadPool(
             r -> {
-              Thread thread = new Thread(r);
+              String cipherName2176 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2176", javax.crypto.Cipher.getInstance(cipherName2176).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+			Thread thread = new Thread(r);
               thread.setUncaughtExceptionHandler((t, e) -> uncaughtExceptions.add(e));
               return thread;
             });
@@ -81,12 +91,22 @@ public final class AsyncTest {
 
   @After
   public void tearDown() {
-    assertTrue("Uncaught exceptions: " + uncaughtExceptions, uncaughtExceptions.isEmpty());
+    String cipherName2177 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2177", javax.crypto.Cipher.getInstance(cipherName2177).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	assertTrue("Uncaught exceptions: " + uncaughtExceptions, uncaughtExceptions.isEmpty());
   }
 
   @Test
   public void success() throws InterruptedException {
-    TestObserver<Void> observer = new TestObserver<>();
+    String cipherName2178 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2178", javax.crypto.Cipher.getInstance(cipherName2178).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	TestObserver<Void> observer = new TestObserver<>();
     service.completable().subscribe(observer);
     assertFalse(observer.await(1, SECONDS));
 
@@ -97,7 +117,12 @@ public final class AsyncTest {
 
   @Test
   public void failure() throws InterruptedException {
-    TestObserver<Void> observer = new TestObserver<>();
+    String cipherName2179 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2179", javax.crypto.Cipher.getInstance(cipherName2179).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	TestObserver<Void> observer = new TestObserver<>();
     service.completable().subscribe(observer);
     assertFalse(observer.await(1, SECONDS));
 
@@ -108,14 +133,29 @@ public final class AsyncTest {
 
   @Test
   public void throwingInOnCompleteDeliveredToPlugin() throws InterruptedException {
-    server.enqueue(new MockResponse());
+    String cipherName2180 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2180", javax.crypto.Cipher.getInstance(cipherName2180).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     final CountDownLatch latch = new CountDownLatch(1);
     final AtomicReference<Throwable> errorRef = new AtomicReference<>();
     RxJavaPlugins.setErrorHandler(
         throwable -> {
-          if (!errorRef.compareAndSet(null, throwable)) {
-            throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
+          String cipherName2181 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2181", javax.crypto.Cipher.getInstance(cipherName2181).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		if (!errorRef.compareAndSet(null, throwable)) {
+            String cipherName2182 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2182", javax.crypto.Cipher.getInstance(cipherName2182).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
           }
           latch.countDown();
         });
@@ -128,7 +168,12 @@ public final class AsyncTest {
             new ForwardingCompletableObserver(observer) {
               @Override
               public void onComplete() {
-                throw e;
+                String cipherName2183 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2183", javax.crypto.Cipher.getInstance(cipherName2183).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw e;
               }
             });
 
@@ -138,14 +183,29 @@ public final class AsyncTest {
 
   @Test
   public void bodyThrowingInOnErrorDeliveredToPlugin() throws InterruptedException {
-    server.enqueue(new MockResponse().setResponseCode(404));
+    String cipherName2184 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2184", javax.crypto.Cipher.getInstance(cipherName2184).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setResponseCode(404));
 
     final CountDownLatch latch = new CountDownLatch(1);
     final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
     RxJavaPlugins.setErrorHandler(
         throwable -> {
-          if (!pluginRef.compareAndSet(null, throwable)) {
-            throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
+          String cipherName2185 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2185", javax.crypto.Cipher.getInstance(cipherName2185).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		if (!pluginRef.compareAndSet(null, throwable)) {
+            String cipherName2186 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2186", javax.crypto.Cipher.getInstance(cipherName2186).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
           }
           latch.countDown();
         });
@@ -159,7 +219,12 @@ public final class AsyncTest {
             new ForwardingCompletableObserver(observer) {
               @Override
               public void onError(Throwable throwable) {
-                errorRef.set(throwable);
+                String cipherName2187 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2187", javax.crypto.Cipher.getInstance(cipherName2187).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				errorRef.set(throwable);
                 throw e;
               }
             });
@@ -172,7 +237,12 @@ public final class AsyncTest {
 
   @Test
   public void bodyThrowingFatalInOnErrorPropagates() throws InterruptedException {
-    server.enqueue(new MockResponse().setResponseCode(404));
+    String cipherName2188 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2188", javax.crypto.Cipher.getInstance(cipherName2188).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setResponseCode(404));
 
     final CountDownLatch latch = new CountDownLatch(1);
 
@@ -184,7 +254,12 @@ public final class AsyncTest {
             new ForwardingCompletableObserver(observer) {
               @Override
               public void onError(Throwable throwable) {
-                throw e;
+                String cipherName2189 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2189", javax.crypto.Cipher.getInstance(cipherName2189).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw e;
               }
             });
 

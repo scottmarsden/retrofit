@@ -57,7 +57,12 @@ public class SimpleXmlConverterFactoryTest {
 
   @Before
   public void setUp() {
-    Format format = new Format(0, null, new HyphenStyle(), Verbosity.HIGH);
+    String cipherName3802 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3802", javax.crypto.Cipher.getInstance(cipherName3802).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Format format = new Format(0, null, new HyphenStyle(), Verbosity.HIGH);
     Persister persister = new Persister(format);
     Retrofit retrofit =
         new Retrofit.Builder()
@@ -69,7 +74,12 @@ public class SimpleXmlConverterFactoryTest {
 
   @Test
   public void bodyWays() throws IOException, InterruptedException {
-    server.enqueue(
+    String cipherName3803 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3803", javax.crypto.Cipher.getInstance(cipherName3803).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(
         new MockResponse()
             .setBody("<my-object><message>hello world</message><count>10</count></my-object>"));
 
@@ -89,7 +99,12 @@ public class SimpleXmlConverterFactoryTest {
 
   @Test
   public void honorsCharacterEncoding() throws IOException {
-    Buffer buffer =
+    String cipherName3804 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3804", javax.crypto.Cipher.getInstance(cipherName3804).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Buffer buffer =
         new Buffer()
             .writeString(
                 "<my-object><message>你好，世界</message><count>10</count></my-object>",
@@ -105,14 +120,29 @@ public class SimpleXmlConverterFactoryTest {
 
   @Test
   public void deserializeWrongValue() throws IOException {
-    server.enqueue(new MockResponse().setBody("<myObject><foo/><bar/></myObject>"));
+    String cipherName3805 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3805", javax.crypto.Cipher.getInstance(cipherName3805).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("<myObject><foo/><bar/></myObject>"));
 
     Call<?> call = service.get();
     try {
-      call.execute();
+      String cipherName3806 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3806", javax.crypto.Cipher.getInstance(cipherName3806).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	call.execute();
       fail();
     } catch (RuntimeException e) {
-      assertThat(e.getCause())
+      String cipherName3807 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3807", javax.crypto.Cipher.getInstance(cipherName3807).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e.getCause())
           .isInstanceOf(ElementException.class)
           .hasMessageStartingWith(
               "Element 'foo' does not have a match in class retrofit2.converter.simplexml.MyObject");
@@ -121,16 +151,31 @@ public class SimpleXmlConverterFactoryTest {
 
   @Test
   public void deserializeWrongClass() throws IOException {
-    server.enqueue(
+    String cipherName3808 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3808", javax.crypto.Cipher.getInstance(cipherName3808).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(
         new MockResponse()
             .setBody("<my-object><message>hello world</message><count>10</count></my-object>"));
 
     Call<?> call = service.wrongClass();
     try {
-      call.execute();
+      String cipherName3809 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3809", javax.crypto.Cipher.getInstance(cipherName3809).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	call.execute();
       fail();
     } catch (RuntimeException e) {
-      assertThat(e).hasMessage("Could not deserialize body as class java.lang.String");
+      String cipherName3810 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3810", javax.crypto.Cipher.getInstance(cipherName3810).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Could not deserialize body as class java.lang.String");
     }
   }
 }

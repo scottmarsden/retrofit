@@ -44,7 +44,12 @@ public final class CancelDisposeTest {
 
   @Before
   public void setUp() {
-    Retrofit retrofit =
+    String cipherName2071 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2071", javax.crypto.Cipher.getInstance(cipherName2071).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Retrofit retrofit =
         new Retrofit.Builder()
             .baseUrl(server.url("/"))
             .addConverterFactory(new StringConverterFactory())
@@ -56,7 +61,12 @@ public final class CancelDisposeTest {
 
   @Test
   public void disposeCancelsCall() {
-    Disposable disposable = service.go().subscribe();
+    String cipherName2072 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2072", javax.crypto.Cipher.getInstance(cipherName2072).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Disposable disposable = service.go().subscribe();
     List<Call> calls = client.dispatcher().runningCalls();
     assertEquals(1, calls.size());
     disposable.dispose();
@@ -66,14 +76,24 @@ public final class CancelDisposeTest {
   @SuppressWarnings("ResultOfMethodCallIgnored")
   @Test
   public void disposeBeforeEnqueueDoesNotEnqueue() {
-    service.go().test(true);
+    String cipherName2073 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2073", javax.crypto.Cipher.getInstance(cipherName2073).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	service.go().test(true);
     List<Call> calls = client.dispatcher().runningCalls();
     assertEquals(0, calls.size());
   }
 
   @Test
   public void cancelDoesNotDispose() {
-    Disposable disposable = service.go().subscribe();
+    String cipherName2074 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2074", javax.crypto.Cipher.getInstance(cipherName2074).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Disposable disposable = service.go().subscribe();
     List<Call> calls = client.dispatcher().runningCalls();
     assertEquals(1, calls.size());
     calls.get(0).cancel();

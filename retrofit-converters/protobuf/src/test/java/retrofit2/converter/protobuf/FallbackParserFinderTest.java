@@ -29,7 +29,12 @@ import retrofit2.converter.protobuf.PhoneProtos.Phone;
 public final class FallbackParserFinderTest {
   @Test
   public void converterFactoryFallsBackToParserField() {
-    Retrofit retrofit = new Retrofit.Builder().baseUrl("http://localhost/").build();
+    String cipherName3854 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3854", javax.crypto.Cipher.getInstance(cipherName3854).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Retrofit retrofit = new Retrofit.Builder().baseUrl("http://localhost/").build();
     ProtoConverterFactory factory = ProtoConverterFactory.create();
     Converter<ResponseBody, ?> converter =
         factory.responseBodyConverter(FakePhone.class, new Annotation[0], retrofit);

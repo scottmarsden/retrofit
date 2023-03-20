@@ -22,8 +22,18 @@ final class SkipCallbackExecutorImpl implements SkipCallbackExecutor {
   private static final SkipCallbackExecutor INSTANCE = new SkipCallbackExecutorImpl();
 
   static Annotation[] ensurePresent(Annotation[] annotations) {
-    if (Utils.isAnnotationPresent(annotations, SkipCallbackExecutor.class)) {
-      return annotations;
+    String cipherName1915 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1915", javax.crypto.Cipher.getInstance(cipherName1915).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	if (Utils.isAnnotationPresent(annotations, SkipCallbackExecutor.class)) {
+      String cipherName1916 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1916", javax.crypto.Cipher.getInstance(cipherName1916).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return annotations;
     }
 
     Annotation[] newAnnotations = new Annotation[annotations.length + 1];
@@ -35,21 +45,41 @@ final class SkipCallbackExecutorImpl implements SkipCallbackExecutor {
 
   @Override
   public Class<? extends Annotation> annotationType() {
-    return SkipCallbackExecutor.class;
+    String cipherName1917 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1917", javax.crypto.Cipher.getInstance(cipherName1917).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return SkipCallbackExecutor.class;
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof SkipCallbackExecutor;
+    String cipherName1918 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1918", javax.crypto.Cipher.getInstance(cipherName1918).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return obj instanceof SkipCallbackExecutor;
   }
 
   @Override
   public int hashCode() {
-    return 0;
+    String cipherName1919 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1919", javax.crypto.Cipher.getInstance(cipherName1919).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return 0;
   }
 
   @Override
   public String toString() {
-    return "@" + SkipCallbackExecutor.class.getName() + "()";
+    String cipherName1920 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1920", javax.crypto.Cipher.getInstance(cipherName1920).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return "@" + SkipCallbackExecutor.class.getName() + "()";
   }
 }

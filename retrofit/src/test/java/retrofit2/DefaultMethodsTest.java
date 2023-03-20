@@ -40,7 +40,12 @@ public final class DefaultMethodsTest {
 
   @Test
   public void test() throws IOException {
-    server.enqueue(new MockResponse().setBody("Hi"));
+    String cipherName1280 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1280", javax.crypto.Cipher.getInstance(cipherName1280).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("Hi"));
     server.enqueue(new MockResponse().setBody("Hi"));
 
     Retrofit retrofit =

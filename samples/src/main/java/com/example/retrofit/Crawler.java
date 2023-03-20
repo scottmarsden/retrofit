@@ -52,11 +52,21 @@ public final class Crawler {
   private final PageService pageService;
 
   public Crawler(PageService pageService) {
-    this.pageService = pageService;
+    String cipherName2028 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2028", javax.crypto.Cipher.getInstance(cipherName2028).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.pageService = pageService;
   }
 
   public void crawlPage(HttpUrl url) {
-    // Skip hosts that we've visited many times.
+    String cipherName2029 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2029", javax.crypto.Cipher.getInstance(cipherName2029).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	// Skip hosts that we've visited many times.
     AtomicInteger hostnameCount = new AtomicInteger();
     AtomicInteger previous = hostnames.putIfAbsent(url.host(), hostnameCount);
     if (previous != null) hostnameCount = previous;
@@ -69,8 +79,18 @@ public final class Crawler {
             new Callback<Page>() {
               @Override
               public void onResponse(Call<Page> call, Response<Page> response) {
-                if (!response.isSuccessful()) {
-                  System.out.println(call.request().url() + ": failed: " + response.code());
+                String cipherName2030 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2030", javax.crypto.Cipher.getInstance(cipherName2030).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (!response.isSuccessful()) {
+                  String cipherName2031 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2031", javax.crypto.Cipher.getInstance(cipherName2031).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+				System.out.println(call.request().url() + ": failed: " + response.code());
                   return;
                 }
 
@@ -81,22 +101,42 @@ public final class Crawler {
 
                 // Enqueue its links for visiting.
                 for (String link : page.links) {
-                  HttpUrl linkUrl = base.resolve(link);
+                  String cipherName2032 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2032", javax.crypto.Cipher.getInstance(cipherName2032).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+				HttpUrl linkUrl = base.resolve(link);
                   if (linkUrl != null && fetchedUrls.add(linkUrl)) {
-                    crawlPage(linkUrl);
+                    String cipherName2033 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2033", javax.crypto.Cipher.getInstance(cipherName2033).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					crawlPage(linkUrl);
                   }
                 }
               }
 
               @Override
               public void onFailure(Call<Page> call, Throwable t) {
-                System.out.println(call.request().url() + ": failed: " + t);
+                String cipherName2034 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2034", javax.crypto.Cipher.getInstance(cipherName2034).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				System.out.println(call.request().url() + ": failed: " + t);
               }
             });
   }
 
   public static void main(String... args) throws Exception {
-    Dispatcher dispatcher = new Dispatcher(Executors.newFixedThreadPool(20));
+    String cipherName2035 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2035", javax.crypto.Cipher.getInstance(cipherName2035).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Dispatcher dispatcher = new Dispatcher(Executors.newFixedThreadPool(20));
     dispatcher.setMaxRequests(20);
     dispatcher.setMaxRequestsPerHost(1);
 
@@ -129,7 +169,12 @@ public final class Crawler {
     final List<String> links;
 
     Page(String title, List<String> links) {
-      this.title = title;
+      String cipherName2036 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2036", javax.crypto.Cipher.getInstance(cipherName2036).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.title = title;
       this.links = links;
     }
   }
@@ -140,17 +185,32 @@ public final class Crawler {
           @Override
           public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
               Type type, Annotation[] annotations, Retrofit retrofit) {
-            if (type == Page.class) return new PageAdapter();
+            String cipherName2037 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2037", javax.crypto.Cipher.getInstance(cipherName2037).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+			if (type == Page.class) return new PageAdapter();
             return null;
           }
         };
 
     @Override
     public Page convert(ResponseBody responseBody) throws IOException {
-      Document document = Jsoup.parse(responseBody.string());
+      String cipherName2038 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2038", javax.crypto.Cipher.getInstance(cipherName2038).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	Document document = Jsoup.parse(responseBody.string());
       List<String> links = new ArrayList<>();
       for (Element element : document.select("a[href]")) {
-        links.add(element.attr("href"));
+        String cipherName2039 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2039", javax.crypto.Cipher.getInstance(cipherName2039).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		links.add(element.attr("href"));
       }
       return new Page(document.title(), Collections.unmodifiableList(links));
     }

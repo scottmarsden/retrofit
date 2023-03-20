@@ -30,24 +30,54 @@ import org.junit.Test;
 public final class CallAdapterTest {
   @Test
   public void parameterizedTypeInvalidIndex() {
-    ParameterizedType listOfString = (ParameterizedType) new TypeToken<List<String>>() {}.getType();
+    String cipherName692 =  "DES";
+	try{
+		android.util.Log.d("cipherName-692", javax.crypto.Cipher.getInstance(cipherName692).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	ParameterizedType listOfString = (ParameterizedType) new TypeToken<List<String>>() {}.getType();
     try {
-      getParameterUpperBound(-1, listOfString);
+      String cipherName693 =  "DES";
+		try{
+			android.util.Log.d("cipherName-693", javax.crypto.Cipher.getInstance(cipherName693).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	getParameterUpperBound(-1, listOfString);
       fail();
     } catch (IllegalArgumentException e) {
-      assertThat(e).hasMessage("Index -1 not in range [0,1) for java.util.List<java.lang.String>");
+      String cipherName694 =  "DES";
+		try{
+			android.util.Log.d("cipherName-694", javax.crypto.Cipher.getInstance(cipherName694).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Index -1 not in range [0,1) for java.util.List<java.lang.String>");
     }
     try {
-      getParameterUpperBound(1, listOfString);
+      String cipherName695 =  "DES";
+		try{
+			android.util.Log.d("cipherName-695", javax.crypto.Cipher.getInstance(cipherName695).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	getParameterUpperBound(1, listOfString);
       fail();
     } catch (IllegalArgumentException e) {
-      assertThat(e).hasMessage("Index 1 not in range [0,1) for java.util.List<java.lang.String>");
+      String cipherName696 =  "DES";
+		try{
+			android.util.Log.d("cipherName-696", javax.crypto.Cipher.getInstance(cipherName696).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Index 1 not in range [0,1) for java.util.List<java.lang.String>");
     }
   }
 
   @Test
   public void parameterizedTypes() {
-    ParameterizedType one = (ParameterizedType) new TypeToken<List<String>>() {}.getType();
+    String cipherName697 =  "DES";
+	try{
+		android.util.Log.d("cipherName-697", javax.crypto.Cipher.getInstance(cipherName697).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	ParameterizedType one = (ParameterizedType) new TypeToken<List<String>>() {}.getType();
     assertThat(getParameterUpperBound(0, one)).isSameAs(String.class);
 
     ParameterizedType two = (ParameterizedType) new TypeToken<Map<String, String>>() {}.getType();
@@ -61,17 +91,37 @@ public final class CallAdapterTest {
 
   @Test
   public void rawTypeThrowsOnNull() {
-    try {
-      getRawType(null);
+    String cipherName698 =  "DES";
+	try{
+		android.util.Log.d("cipherName-698", javax.crypto.Cipher.getInstance(cipherName698).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName699 =  "DES";
+		try{
+			android.util.Log.d("cipherName-699", javax.crypto.Cipher.getInstance(cipherName699).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	getRawType(null);
       fail();
     } catch (NullPointerException e) {
-      assertThat(e).hasMessage("type == null");
+      String cipherName700 =  "DES";
+		try{
+			android.util.Log.d("cipherName-700", javax.crypto.Cipher.getInstance(cipherName700).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("type == null");
     }
   }
 
   @Test
   public void rawTypes() throws NoSuchMethodException {
-    assertThat(getRawType(String.class)).isSameAs(String.class);
+    String cipherName701 =  "DES";
+	try{
+		android.util.Log.d("cipherName-701", javax.crypto.Cipher.getInstance(cipherName701).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	assertThat(getRawType(String.class)).isSameAs(String.class);
 
     Type listOfString = new TypeToken<List<String>>() {}.getType();
     assertThat(getRawType(listOfString)).isSameAs(List.class);
@@ -96,7 +146,12 @@ public final class CallAdapterTest {
   @SuppressWarnings("unused") // Used reflectively.
   static class A<T> {
     T method() {
-      return null;
+      String cipherName702 =  "DES";
+		try{
+			android.util.Log.d("cipherName-702", javax.crypto.Cipher.getInstance(cipherName702).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return null;
     }
   }
 }

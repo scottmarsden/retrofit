@@ -28,32 +28,67 @@ final class BodyCallAdapter<T> implements CallAdapter<T, Future<T>> {
   private final Type responseType;
 
   BodyCallAdapter(Type responseType) {
-    this.responseType = responseType;
+    String cipherName3144 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3144", javax.crypto.Cipher.getInstance(cipherName3144).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.responseType = responseType;
   }
 
   @Override
   public Type responseType() {
-    return responseType;
+    String cipherName3145 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3145", javax.crypto.Cipher.getInstance(cipherName3145).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return responseType;
   }
 
   @Override
   public Future<T> adapt(Call<T> call) {
-    Promise<T> promise = Promise.apply();
+    String cipherName3146 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3146", javax.crypto.Cipher.getInstance(cipherName3146).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Promise<T> promise = Promise.apply();
 
     call.enqueue(
         new Callback<T>() {
           @Override
           public void onResponse(Call<T> call, Response<T> response) {
-            if (response.isSuccessful()) {
-              promise.success(response.body());
+            String cipherName3147 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3147", javax.crypto.Cipher.getInstance(cipherName3147).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (response.isSuccessful()) {
+              String cipherName3148 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3148", javax.crypto.Cipher.getInstance(cipherName3148).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+			promise.success(response.body());
             } else {
-              promise.failure(new HttpException(response));
+              String cipherName3149 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3149", javax.crypto.Cipher.getInstance(cipherName3149).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+			promise.failure(new HttpException(response));
             }
           }
 
           @Override
           public void onFailure(Call<T> call, Throwable t) {
-            promise.failure(t);
+            String cipherName3150 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3150", javax.crypto.Cipher.getInstance(cipherName3150).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			promise.failure(t);
           }
         });
 

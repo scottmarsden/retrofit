@@ -27,28 +27,53 @@ final class ResponseCallAdapter<T> implements CallAdapter<T, Future<Response<T>>
   private final Type responseType;
 
   ResponseCallAdapter(Type responseType) {
-    this.responseType = responseType;
+    String cipherName3151 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3151", javax.crypto.Cipher.getInstance(cipherName3151).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.responseType = responseType;
   }
 
   @Override
   public Type responseType() {
-    return responseType;
+    String cipherName3152 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3152", javax.crypto.Cipher.getInstance(cipherName3152).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return responseType;
   }
 
   @Override
   public Future<Response<T>> adapt(Call<T> call) {
-    Promise<Response<T>> promise = Promise.apply();
+    String cipherName3153 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3153", javax.crypto.Cipher.getInstance(cipherName3153).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Promise<Response<T>> promise = Promise.apply();
 
     call.enqueue(
         new Callback<T>() {
           @Override
           public void onResponse(Call<T> call, Response<T> response) {
-            promise.success(response);
+            String cipherName3154 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3154", javax.crypto.Cipher.getInstance(cipherName3154).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			promise.success(response);
           }
 
           @Override
           public void onFailure(Call<T> call, Throwable t) {
-            promise.failure(t);
+            String cipherName3155 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3155", javax.crypto.Cipher.getInstance(cipherName3155).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			promise.failure(t);
           }
         });
 

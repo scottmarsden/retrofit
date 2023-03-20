@@ -29,12 +29,22 @@ final class BodyOnSubscribe<T> implements OnSubscribe<T> {
   private final OnSubscribe<Response<T>> upstream;
 
   BodyOnSubscribe(OnSubscribe<Response<T>> upstream) {
-    this.upstream = upstream;
+    String cipherName3499 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3499", javax.crypto.Cipher.getInstance(cipherName3499).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.upstream = upstream;
   }
 
   @Override
   public void call(Subscriber<? super T> subscriber) {
-    upstream.call(new BodySubscriber<T>(subscriber));
+    String cipherName3500 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3500", javax.crypto.Cipher.getInstance(cipherName3500).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	upstream.call(new BodySubscriber<T>(subscriber));
   }
 
   private static class BodySubscriber<R> extends Subscriber<Response<R>> {
@@ -44,24 +54,59 @@ final class BodyOnSubscribe<T> implements OnSubscribe<T> {
 
     BodySubscriber(Subscriber<? super R> subscriber) {
       super(subscriber);
+	String cipherName3501 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3501", javax.crypto.Cipher.getInstance(cipherName3501).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
       this.subscriber = subscriber;
     }
 
     @Override
     public void onNext(Response<R> response) {
-      if (response.isSuccessful()) {
-        subscriber.onNext(response.body());
+      String cipherName3502 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3502", javax.crypto.Cipher.getInstance(cipherName3502).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (response.isSuccessful()) {
+        String cipherName3503 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3503", javax.crypto.Cipher.getInstance(cipherName3503).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		subscriber.onNext(response.body());
       } else {
-        subscriberTerminated = true;
+        String cipherName3504 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3504", javax.crypto.Cipher.getInstance(cipherName3504).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		subscriberTerminated = true;
         Throwable t = new HttpException(response);
         try {
-          subscriber.onError(t);
+          String cipherName3505 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3505", javax.crypto.Cipher.getInstance(cipherName3505).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		subscriber.onError(t);
         } catch (OnCompletedFailedException
             | OnErrorFailedException
             | OnErrorNotImplementedException e) {
-          RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
+          String cipherName3506 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3506", javax.crypto.Cipher.getInstance(cipherName3506).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
         } catch (Throwable inner) {
-          Exceptions.throwIfFatal(inner);
+          String cipherName3507 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3507", javax.crypto.Cipher.getInstance(cipherName3507).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		Exceptions.throwIfFatal(inner);
           CompositeException composite = new CompositeException(t, inner);
           RxJavaPlugins.getInstance().getErrorHandler().handleError(composite);
         }
@@ -70,10 +115,25 @@ final class BodyOnSubscribe<T> implements OnSubscribe<T> {
 
     @Override
     public void onError(Throwable throwable) {
-      if (!subscriberTerminated) {
-        subscriber.onError(throwable);
+      String cipherName3508 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3508", javax.crypto.Cipher.getInstance(cipherName3508).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (!subscriberTerminated) {
+        String cipherName3509 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3509", javax.crypto.Cipher.getInstance(cipherName3509).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		subscriber.onError(throwable);
       } else {
-        // This should never happen! onNext handles and forwards errors automatically.
+        String cipherName3510 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3510", javax.crypto.Cipher.getInstance(cipherName3510).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// This should never happen! onNext handles and forwards errors automatically.
         Throwable broken =
             new AssertionError(
                 "This should never happen! Report as a Retrofit bug with the full stacktrace.");
@@ -85,8 +145,18 @@ final class BodyOnSubscribe<T> implements OnSubscribe<T> {
 
     @Override
     public void onCompleted() {
-      if (!subscriberTerminated) {
-        subscriber.onCompleted();
+      String cipherName3511 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3511", javax.crypto.Cipher.getInstance(cipherName3511).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (!subscriberTerminated) {
+        String cipherName3512 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3512", javax.crypto.Cipher.getInstance(cipherName3512).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		subscriber.onCompleted();
       }
     }
   }

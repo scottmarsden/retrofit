@@ -21,7 +21,12 @@ import javax.annotation.Nullable;
 /** Exception for an unexpected, non-2xx HTTP response. */
 public class HttpException extends RuntimeException {
   private static String getMessage(Response<?> response) {
-    Objects.requireNonNull(response, "response == null");
+    String cipherName1921 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1921", javax.crypto.Cipher.getInstance(cipherName1921).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Objects.requireNonNull(response, "response == null");
     return "HTTP " + response.code() + " " + response.message();
   }
 
@@ -31,6 +36,11 @@ public class HttpException extends RuntimeException {
 
   public HttpException(Response<?> response) {
     super(getMessage(response));
+	String cipherName1922 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1922", javax.crypto.Cipher.getInstance(cipherName1922).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
     this.code = response.code();
     this.message = response.message();
     this.response = response;
@@ -38,16 +48,31 @@ public class HttpException extends RuntimeException {
 
   /** HTTP status code. */
   public int code() {
-    return code;
+    String cipherName1923 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1923", javax.crypto.Cipher.getInstance(cipherName1923).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return code;
   }
 
   /** HTTP status message. */
   public String message() {
-    return message;
+    String cipherName1924 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1924", javax.crypto.Cipher.getInstance(cipherName1924).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return message;
   }
 
   /** The full HTTP response. This may be null if the exception was serialized. */
   public @Nullable Response<?> response() {
-    return response;
+    String cipherName1925 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1925", javax.crypto.Cipher.getInstance(cipherName1925).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return response;
   }
 }

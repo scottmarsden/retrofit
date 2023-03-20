@@ -27,7 +27,12 @@ public final class NonMatchingCallAdapterFactory extends CallAdapter.Factory {
   @Override
   public @Nullable CallAdapter<?, ?> get(
       Type returnType, Annotation[] annotations, Retrofit retrofit) {
-    called = true;
+    String cipherName317 =  "DES";
+		try{
+			android.util.Log.d("cipherName-317", javax.crypto.Cipher.getInstance(cipherName317).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	called = true;
     return null;
   }
 }

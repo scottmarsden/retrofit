@@ -30,26 +30,56 @@ final class MoshiResponseBodyConverter<T> implements Converter<ResponseBody, T> 
   private final JsonAdapter<T> adapter;
 
   MoshiResponseBodyConverter(JsonAdapter<T> adapter) {
-    this.adapter = adapter;
+    String cipherName3796 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3796", javax.crypto.Cipher.getInstance(cipherName3796).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.adapter = adapter;
   }
 
   @Override
   public T convert(ResponseBody value) throws IOException {
-    BufferedSource source = value.source();
+    String cipherName3797 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3797", javax.crypto.Cipher.getInstance(cipherName3797).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	BufferedSource source = value.source();
     try {
-      // Moshi has no document-level API so the responsibility of BOM skipping falls to whatever
+      String cipherName3798 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3798", javax.crypto.Cipher.getInstance(cipherName3798).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	// Moshi has no document-level API so the responsibility of BOM skipping falls to whatever
       // is delegating to it. Since it's a UTF-8-only library as well we only honor the UTF-8 BOM.
       if (source.rangeEquals(0, UTF8_BOM)) {
-        source.skip(UTF8_BOM.size());
+        String cipherName3799 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3799", javax.crypto.Cipher.getInstance(cipherName3799).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		source.skip(UTF8_BOM.size());
       }
       JsonReader reader = JsonReader.of(source);
       T result = adapter.fromJson(reader);
       if (reader.peek() != JsonReader.Token.END_DOCUMENT) {
-        throw new JsonDataException("JSON document was not fully consumed.");
+        String cipherName3800 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3800", javax.crypto.Cipher.getInstance(cipherName3800).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw new JsonDataException("JSON document was not fully consumed.");
       }
       return result;
     } finally {
-      value.close();
+      String cipherName3801 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3801", javax.crypto.Cipher.getInstance(cipherName3801).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	value.close();
     }
   }
 }

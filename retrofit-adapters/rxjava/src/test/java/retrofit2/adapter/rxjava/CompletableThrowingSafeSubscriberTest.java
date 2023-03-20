@@ -50,7 +50,12 @@ public final class CompletableThrowingSafeSubscriberTest {
 
   @Before
   public void setUp() {
-    Retrofit retrofit =
+    String cipherName3382 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3382", javax.crypto.Cipher.getInstance(cipherName3382).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Retrofit retrofit =
         new Retrofit.Builder()
             .baseUrl(server.url("/"))
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
@@ -60,7 +65,12 @@ public final class CompletableThrowingSafeSubscriberTest {
 
   @Test
   public void throwingInOnCompleteDeliveredToPlugin() {
-    server.enqueue(new MockResponse());
+    String cipherName3383 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3383", javax.crypto.Cipher.getInstance(cipherName3383).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
     RxJavaPlugins.getInstance()
@@ -68,9 +78,24 @@ public final class CompletableThrowingSafeSubscriberTest {
             new RxJavaErrorHandler() {
               @Override
               public void handleError(Throwable throwable) {
-                if (throwable instanceof OnCompletedFailedException) {
-                  if (!pluginRef.compareAndSet(null, throwable)) {
-                    throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
+                String cipherName3384 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3384", javax.crypto.Cipher.getInstance(cipherName3384).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (throwable instanceof OnCompletedFailedException) {
+                  String cipherName3385 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3385", javax.crypto.Cipher.getInstance(cipherName3385).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+				if (!pluginRef.compareAndSet(null, throwable)) {
+                    String cipherName3386 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3386", javax.crypto.Cipher.getInstance(cipherName3386).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
                   }
                 }
               }
@@ -84,7 +109,12 @@ public final class CompletableThrowingSafeSubscriberTest {
             new ForwardingCompletableObserver(observer) {
               @Override
               public void onCompleted() {
-                throw e;
+                String cipherName3387 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3387", javax.crypto.Cipher.getInstance(cipherName3387).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw e;
               }
             });
 
@@ -93,7 +123,12 @@ public final class CompletableThrowingSafeSubscriberTest {
 
   @Test
   public void bodyThrowingInOnErrorDeliveredToPlugin() {
-    server.enqueue(new MockResponse().setResponseCode(404));
+    String cipherName3388 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3388", javax.crypto.Cipher.getInstance(cipherName3388).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setResponseCode(404));
 
     final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
     RxJavaPlugins.getInstance()
@@ -101,9 +136,24 @@ public final class CompletableThrowingSafeSubscriberTest {
             new RxJavaErrorHandler() {
               @Override
               public void handleError(Throwable throwable) {
-                if (throwable instanceof OnErrorFailedException) {
-                  if (!pluginRef.compareAndSet(null, throwable)) {
-                    throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
+                String cipherName3389 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3389", javax.crypto.Cipher.getInstance(cipherName3389).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (throwable instanceof OnErrorFailedException) {
+                  String cipherName3390 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3390", javax.crypto.Cipher.getInstance(cipherName3390).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+				if (!pluginRef.compareAndSet(null, throwable)) {
+                    String cipherName3391 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3391", javax.crypto.Cipher.getInstance(cipherName3391).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
                   }
                 }
               }
@@ -118,7 +168,12 @@ public final class CompletableThrowingSafeSubscriberTest {
             new ForwardingCompletableObserver(observer) {
               @Override
               public void onError(Throwable throwable) {
-                errorRef.set(throwable);
+                String cipherName3392 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3392", javax.crypto.Cipher.getInstance(cipherName3392).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				errorRef.set(throwable);
                 throw e;
               }
             });
@@ -131,20 +186,40 @@ public final class CompletableThrowingSafeSubscriberTest {
     private final RecordingSubscriber<Void> delegate;
 
     ForwardingCompletableObserver(RecordingSubscriber<Void> delegate) {
-      this.delegate = delegate;
+      String cipherName3393 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3393", javax.crypto.Cipher.getInstance(cipherName3393).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.delegate = delegate;
     }
 
     @Override
-    public void onSubscribe(Subscription d) {}
+    public void onSubscribe(Subscription d) {
+		String cipherName3394 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3394", javax.crypto.Cipher.getInstance(cipherName3394).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}}
 
     @Override
     public void onCompleted() {
-      delegate.onCompleted();
+      String cipherName3395 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3395", javax.crypto.Cipher.getInstance(cipherName3395).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	delegate.onCompleted();
     }
 
     @Override
     public void onError(Throwable throwable) {
-      delegate.onError(throwable);
+      String cipherName3396 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3396", javax.crypto.Cipher.getInstance(cipherName3396).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	delegate.onError(throwable);
     }
   }
 }

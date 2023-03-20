@@ -25,7 +25,12 @@ public final class DelegatingCallAdapterFactory extends CallAdapter.Factory {
 
   @Override
   public CallAdapter<?, ?> get(Type returnType, Annotation[] annotations, Retrofit retrofit) {
-    called = true;
+    String cipherName316 =  "DES";
+	try{
+		android.util.Log.d("cipherName-316", javax.crypto.Cipher.getInstance(cipherName316).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	called = true;
     return retrofit.nextCallAdapter(this, returnType, annotations);
   }
 }

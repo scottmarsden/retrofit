@@ -46,7 +46,12 @@ public final class ListenableFutureTest {
 
   @Before
   public void setUp() {
-    Retrofit retrofit =
+    String cipherName3076 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3076", javax.crypto.Cipher.getInstance(cipherName3076).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Retrofit retrofit =
         new Retrofit.Builder()
             .baseUrl(server.url("/"))
             .addConverterFactory(new StringConverterFactory())
@@ -57,7 +62,12 @@ public final class ListenableFutureTest {
 
   @Test
   public void bodySuccess200() throws Exception {
-    server.enqueue(new MockResponse().setBody("Hi"));
+    String cipherName3077 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3077", javax.crypto.Cipher.getInstance(cipherName3077).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("Hi"));
 
     ListenableFuture<String> future = service.body();
     assertThat(future.get()).isEqualTo("Hi");
@@ -65,14 +75,29 @@ public final class ListenableFutureTest {
 
   @Test
   public void bodySuccess404() throws Exception {
-    server.enqueue(new MockResponse().setResponseCode(404));
+    String cipherName3078 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3078", javax.crypto.Cipher.getInstance(cipherName3078).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setResponseCode(404));
 
     ListenableFuture<String> future = service.body();
     try {
-      future.get();
+      String cipherName3079 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3079", javax.crypto.Cipher.getInstance(cipherName3079).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	future.get();
       fail();
     } catch (ExecutionException e) {
-      assertThat(e.getCause())
+      String cipherName3080 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3080", javax.crypto.Cipher.getInstance(cipherName3080).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e.getCause())
           .isInstanceOf(HttpException.class) // Required for backwards compatibility.
           .isInstanceOf(retrofit2.HttpException.class)
           .hasMessage("HTTP 404 Client Error");
@@ -81,20 +106,40 @@ public final class ListenableFutureTest {
 
   @Test
   public void bodyFailure() throws Exception {
-    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+    String cipherName3081 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3081", javax.crypto.Cipher.getInstance(cipherName3081).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
 
     ListenableFuture<String> future = service.body();
     try {
-      future.get();
+      String cipherName3082 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3082", javax.crypto.Cipher.getInstance(cipherName3082).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	future.get();
       fail();
     } catch (ExecutionException e) {
-      assertThat(e.getCause()).isInstanceOf(IOException.class);
+      String cipherName3083 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3083", javax.crypto.Cipher.getInstance(cipherName3083).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e.getCause()).isInstanceOf(IOException.class);
     }
   }
 
   @Test
   public void responseSuccess200() throws Exception {
-    server.enqueue(new MockResponse().setBody("Hi"));
+    String cipherName3084 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3084", javax.crypto.Cipher.getInstance(cipherName3084).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("Hi"));
 
     ListenableFuture<Response<String>> future = service.response();
     Response<String> response = future.get();
@@ -104,7 +149,12 @@ public final class ListenableFutureTest {
 
   @Test
   public void responseSuccess404() throws Exception {
-    server.enqueue(new MockResponse().setResponseCode(404).setBody("Hi"));
+    String cipherName3085 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3085", javax.crypto.Cipher.getInstance(cipherName3085).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setResponseCode(404).setBody("Hi"));
 
     ListenableFuture<Response<String>> future = service.response();
     Response<String> response = future.get();
@@ -114,14 +164,29 @@ public final class ListenableFutureTest {
 
   @Test
   public void responseFailure() throws Exception {
-    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+    String cipherName3086 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3086", javax.crypto.Cipher.getInstance(cipherName3086).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
 
     ListenableFuture<Response<String>> future = service.response();
     try {
-      future.get();
+      String cipherName3087 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3087", javax.crypto.Cipher.getInstance(cipherName3087).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	future.get();
       fail();
     } catch (ExecutionException e) {
-      assertThat(e.getCause()).isInstanceOf(IOException.class);
+      String cipherName3088 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3088", javax.crypto.Cipher.getInstance(cipherName3088).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e.getCause()).isInstanceOf(IOException.class);
     }
   }
 }

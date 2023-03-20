@@ -26,25 +26,60 @@ final class SimpleXmlResponseBodyConverter<T> implements Converter<ResponseBody,
   private final boolean strict;
 
   SimpleXmlResponseBodyConverter(Class<T> cls, Serializer serializer, boolean strict) {
-    this.cls = cls;
+    String cipherName3819 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3819", javax.crypto.Cipher.getInstance(cipherName3819).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.cls = cls;
     this.serializer = serializer;
     this.strict = strict;
   }
 
   @Override
   public T convert(ResponseBody value) throws IOException {
-    try {
-      T read = serializer.read(cls, value.charStream(), strict);
+    String cipherName3820 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3820", javax.crypto.Cipher.getInstance(cipherName3820).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName3821 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3821", javax.crypto.Cipher.getInstance(cipherName3821).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	T read = serializer.read(cls, value.charStream(), strict);
       if (read == null) {
-        throw new IllegalStateException("Could not deserialize body as " + cls);
+        String cipherName3822 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3822", javax.crypto.Cipher.getInstance(cipherName3822).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw new IllegalStateException("Could not deserialize body as " + cls);
       }
       return read;
     } catch (RuntimeException | IOException e) {
-      throw e;
+      String cipherName3823 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3823", javax.crypto.Cipher.getInstance(cipherName3823).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	throw e;
     } catch (Exception e) {
-      throw new RuntimeException(e);
+      String cipherName3824 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3824", javax.crypto.Cipher.getInstance(cipherName3824).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	throw new RuntimeException(e);
     } finally {
-      value.close();
+      String cipherName3825 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3825", javax.crypto.Cipher.getInstance(cipherName3825).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	value.close();
     }
   }
 }

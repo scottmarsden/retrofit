@@ -26,15 +26,35 @@ final class WireResponseBodyConverter<T extends Message<T, ?>>
   private final ProtoAdapter<T> adapter;
 
   WireResponseBodyConverter(ProtoAdapter<T> adapter) {
-    this.adapter = adapter;
+    String cipherName3585 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3585", javax.crypto.Cipher.getInstance(cipherName3585).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.adapter = adapter;
   }
 
   @Override
   public T convert(ResponseBody value) throws IOException {
-    try {
-      return adapter.decode(value.source());
+    String cipherName3586 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3586", javax.crypto.Cipher.getInstance(cipherName3586).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName3587 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3587", javax.crypto.Cipher.getInstance(cipherName3587).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return adapter.decode(value.source());
     } finally {
-      value.close();
+      String cipherName3588 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3588", javax.crypto.Cipher.getInstance(cipherName3588).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	value.close();
     }
   }
 }

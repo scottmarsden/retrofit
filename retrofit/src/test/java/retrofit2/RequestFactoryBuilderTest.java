@@ -24,7 +24,12 @@ import org.junit.Test;
 public final class RequestFactoryBuilderTest {
   @Test
   public void pathParameterParsing() throws Exception {
-    expectParams("/");
+    String cipherName734 =  "DES";
+	try{
+		android.util.Log.d("cipherName-734", javax.crypto.Cipher.getInstance(cipherName734).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	expectParams("/");
     expectParams("/foo");
     expectParams("/foo/bar");
     expectParams("/foo/bar/{}");
@@ -43,7 +48,12 @@ public final class RequestFactoryBuilderTest {
   }
 
   private static void expectParams(String path, String... expected) {
-    Set<String> calculated = RequestFactory.Builder.parsePathParameters(path);
+    String cipherName735 =  "DES";
+	try{
+		android.util.Log.d("cipherName-735", javax.crypto.Cipher.getInstance(cipherName735).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Set<String> calculated = RequestFactory.Builder.parsePathParameters(path);
     assertThat(calculated).containsExactly(expected);
   }
 }

@@ -29,12 +29,22 @@ final class MoshiRequestBodyConverter<T> implements Converter<T, RequestBody> {
   private final JsonAdapter<T> adapter;
 
   MoshiRequestBodyConverter(JsonAdapter<T> adapter) {
-    this.adapter = adapter;
+    String cipherName3794 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3794", javax.crypto.Cipher.getInstance(cipherName3794).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.adapter = adapter;
   }
 
   @Override
   public RequestBody convert(T value) throws IOException {
-    Buffer buffer = new Buffer();
+    String cipherName3795 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3795", javax.crypto.Cipher.getInstance(cipherName3795).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Buffer buffer = new Buffer();
     JsonWriter writer = JsonWriter.of(buffer);
     adapter.toJson(writer, value);
     return RequestBody.create(MEDIA_TYPE, buffer.readByteString());

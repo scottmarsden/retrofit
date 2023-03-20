@@ -49,7 +49,12 @@ public final class ObservableTest {
 
   @Before
   public void setUp() {
-    Retrofit retrofit =
+    String cipherName2057 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2057", javax.crypto.Cipher.getInstance(cipherName2057).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Retrofit retrofit =
         new Retrofit.Builder()
             .baseUrl(server.url("/"))
             .addConverterFactory(new StringConverterFactory())
@@ -60,7 +65,12 @@ public final class ObservableTest {
 
   @Test
   public void bodySuccess200() {
-    server.enqueue(new MockResponse().setBody("Hi"));
+    String cipherName2058 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2058", javax.crypto.Cipher.getInstance(cipherName2058).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("Hi"));
 
     RecordingObserver<String> observer = observerRule.create();
     service.body().subscribe(observer);
@@ -69,7 +79,12 @@ public final class ObservableTest {
 
   @Test
   public void bodySuccess404() {
-    server.enqueue(new MockResponse().setResponseCode(404));
+    String cipherName2059 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2059", javax.crypto.Cipher.getInstance(cipherName2059).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setResponseCode(404));
 
     RecordingObserver<String> observer = observerRule.create();
     service.body().subscribe(observer);
@@ -79,7 +94,12 @@ public final class ObservableTest {
 
   @Test
   public void bodyFailure() {
-    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+    String cipherName2060 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2060", javax.crypto.Cipher.getInstance(cipherName2060).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
 
     RecordingObserver<String> observer = observerRule.create();
     service.body().subscribe(observer);
@@ -88,7 +108,12 @@ public final class ObservableTest {
 
   @Test
   public void responseSuccess200() {
-    server.enqueue(new MockResponse());
+    String cipherName2061 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2061", javax.crypto.Cipher.getInstance(cipherName2061).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     RecordingObserver<Response<String>> observer = observerRule.create();
     service.response().subscribe(observer);
@@ -98,7 +123,12 @@ public final class ObservableTest {
 
   @Test
   public void responseSuccess404() {
-    server.enqueue(new MockResponse().setResponseCode(404));
+    String cipherName2062 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2062", javax.crypto.Cipher.getInstance(cipherName2062).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setResponseCode(404));
 
     RecordingObserver<Response<String>> observer = observerRule.create();
     service.response().subscribe(observer);
@@ -108,7 +138,12 @@ public final class ObservableTest {
 
   @Test
   public void responseFailure() {
-    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+    String cipherName2063 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2063", javax.crypto.Cipher.getInstance(cipherName2063).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
 
     RecordingObserver<Response<String>> observer = observerRule.create();
     service.response().subscribe(observer);
@@ -117,7 +152,12 @@ public final class ObservableTest {
 
   @Test
   public void resultSuccess200() {
-    server.enqueue(new MockResponse().setBody("Hi"));
+    String cipherName2064 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2064", javax.crypto.Cipher.getInstance(cipherName2064).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("Hi"));
 
     RecordingObserver<Result<String>> observer = observerRule.create();
     service.result().subscribe(observer);
@@ -129,7 +169,12 @@ public final class ObservableTest {
 
   @Test
   public void resultSuccess404() {
-    server.enqueue(new MockResponse().setResponseCode(404));
+    String cipherName2065 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2065", javax.crypto.Cipher.getInstance(cipherName2065).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setResponseCode(404));
 
     RecordingObserver<Result<String>> observer = observerRule.create();
     service.result().subscribe(observer);
@@ -141,7 +186,12 @@ public final class ObservableTest {
 
   @Test
   public void resultFailure() {
-    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+    String cipherName2066 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2066", javax.crypto.Cipher.getInstance(cipherName2066).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
 
     RecordingObserver<Result<String>> observer = observerRule.create();
     service.result().subscribe(observer);
@@ -153,18 +203,38 @@ public final class ObservableTest {
 
   @Test
   public void observableAssembly() {
-    try {
-      final Observable<String> justMe = Observable.just("me");
+    String cipherName2067 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2067", javax.crypto.Cipher.getInstance(cipherName2067).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName2068 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2068", javax.crypto.Cipher.getInstance(cipherName2068).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	final Observable<String> justMe = Observable.just("me");
       RxJavaPlugins.setOnObservableAssembly(f -> justMe);
       assertThat(service.body()).isEqualTo(justMe);
     } finally {
-      RxJavaPlugins.reset();
+      String cipherName2069 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2069", javax.crypto.Cipher.getInstance(cipherName2069).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	RxJavaPlugins.reset();
     }
   }
 
   @Test
   public void subscribeTwice() {
-    server.enqueue(new MockResponse().setBody("Hi"));
+    String cipherName2070 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2070", javax.crypto.Cipher.getInstance(cipherName2070).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("Hi"));
     server.enqueue(new MockResponse().setBody("Hey"));
 
     Observable<String> observable = service.body();

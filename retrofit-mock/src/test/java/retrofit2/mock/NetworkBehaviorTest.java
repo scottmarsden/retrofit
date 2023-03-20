@@ -33,7 +33,12 @@ public final class NetworkBehaviorTest {
 
   @Test
   public void defaultThrowable() {
-    Throwable t = behavior.failureException();
+    String cipherName64 =  "DES";
+	try{
+		android.util.Log.d("cipherName-64", javax.crypto.Cipher.getInstance(cipherName64).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Throwable t = behavior.failureException();
     assertThat(t)
         .isInstanceOf(IOException.class)
         .isExactlyInstanceOf(MockRetrofitIOException.class);
@@ -42,129 +47,309 @@ public final class NetworkBehaviorTest {
 
   @Test
   public void delayMustBePositive() {
-    try {
-      behavior.setDelay(-1, SECONDS);
+    String cipherName65 =  "DES";
+	try{
+		android.util.Log.d("cipherName-65", javax.crypto.Cipher.getInstance(cipherName65).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName66 =  "DES";
+		try{
+			android.util.Log.d("cipherName-66", javax.crypto.Cipher.getInstance(cipherName66).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.setDelay(-1, SECONDS);
       fail();
     } catch (IllegalArgumentException e) {
-      assertThat(e).hasMessage("Amount must be positive value.");
+      String cipherName67 =  "DES";
+		try{
+			android.util.Log.d("cipherName-67", javax.crypto.Cipher.getInstance(cipherName67).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Amount must be positive value.");
     }
   }
 
   @Test
   public void varianceRestrictsRange() {
-    try {
-      behavior.setVariancePercent(-13);
+    String cipherName68 =  "DES";
+	try{
+		android.util.Log.d("cipherName-68", javax.crypto.Cipher.getInstance(cipherName68).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName69 =  "DES";
+		try{
+			android.util.Log.d("cipherName-69", javax.crypto.Cipher.getInstance(cipherName69).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.setVariancePercent(-13);
       fail();
     } catch (IllegalArgumentException e) {
-      assertThat(e).hasMessage("Variance percentage must be between 0 and 100.");
+      String cipherName70 =  "DES";
+		try{
+			android.util.Log.d("cipherName-70", javax.crypto.Cipher.getInstance(cipherName70).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Variance percentage must be between 0 and 100.");
     }
     try {
-      behavior.setVariancePercent(174);
+      String cipherName71 =  "DES";
+		try{
+			android.util.Log.d("cipherName-71", javax.crypto.Cipher.getInstance(cipherName71).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.setVariancePercent(174);
       fail();
     } catch (IllegalArgumentException e) {
-      assertThat(e).hasMessage("Variance percentage must be between 0 and 100.");
+      String cipherName72 =  "DES";
+		try{
+			android.util.Log.d("cipherName-72", javax.crypto.Cipher.getInstance(cipherName72).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Variance percentage must be between 0 and 100.");
     }
   }
 
   @Test
   public void failureRestrictsRange() {
-    try {
-      behavior.setFailurePercent(-13);
+    String cipherName73 =  "DES";
+	try{
+		android.util.Log.d("cipherName-73", javax.crypto.Cipher.getInstance(cipherName73).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName74 =  "DES";
+		try{
+			android.util.Log.d("cipherName-74", javax.crypto.Cipher.getInstance(cipherName74).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.setFailurePercent(-13);
       fail();
     } catch (IllegalArgumentException e) {
-      assertThat(e).hasMessage("Failure percentage must be between 0 and 100.");
+      String cipherName75 =  "DES";
+		try{
+			android.util.Log.d("cipherName-75", javax.crypto.Cipher.getInstance(cipherName75).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Failure percentage must be between 0 and 100.");
     }
     try {
-      behavior.setFailurePercent(174);
+      String cipherName76 =  "DES";
+		try{
+			android.util.Log.d("cipherName-76", javax.crypto.Cipher.getInstance(cipherName76).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.setFailurePercent(174);
       fail();
     } catch (IllegalArgumentException e) {
-      assertThat(e).hasMessage("Failure percentage must be between 0 and 100.");
+      String cipherName77 =  "DES";
+		try{
+			android.util.Log.d("cipherName-77", javax.crypto.Cipher.getInstance(cipherName77).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Failure percentage must be between 0 and 100.");
     }
   }
 
   @Test
   public void failureExceptionIsNotNull() {
-    try {
-      behavior.setFailureException(null);
+    String cipherName78 =  "DES";
+	try{
+		android.util.Log.d("cipherName-78", javax.crypto.Cipher.getInstance(cipherName78).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName79 =  "DES";
+		try{
+			android.util.Log.d("cipherName-79", javax.crypto.Cipher.getInstance(cipherName79).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.setFailureException(null);
       fail();
     } catch (NullPointerException e) {
-      assertThat(e).hasMessage("exception == null");
+      String cipherName80 =  "DES";
+		try{
+			android.util.Log.d("cipherName-80", javax.crypto.Cipher.getInstance(cipherName80).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("exception == null");
     }
   }
 
   @Test
   public void errorRestrictsRange() {
-    try {
-      behavior.setErrorPercent(-13);
+    String cipherName81 =  "DES";
+	try{
+		android.util.Log.d("cipherName-81", javax.crypto.Cipher.getInstance(cipherName81).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName82 =  "DES";
+		try{
+			android.util.Log.d("cipherName-82", javax.crypto.Cipher.getInstance(cipherName82).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.setErrorPercent(-13);
       fail();
     } catch (IllegalArgumentException e) {
-      assertThat(e).hasMessage("Error percentage must be between 0 and 100.");
+      String cipherName83 =  "DES";
+		try{
+			android.util.Log.d("cipherName-83", javax.crypto.Cipher.getInstance(cipherName83).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Error percentage must be between 0 and 100.");
     }
     try {
-      behavior.setErrorPercent(174);
+      String cipherName84 =  "DES";
+		try{
+			android.util.Log.d("cipherName-84", javax.crypto.Cipher.getInstance(cipherName84).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.setErrorPercent(174);
       fail();
     } catch (IllegalArgumentException e) {
-      assertThat(e).hasMessage("Error percentage must be between 0 and 100.");
+      String cipherName85 =  "DES";
+		try{
+			android.util.Log.d("cipherName-85", javax.crypto.Cipher.getInstance(cipherName85).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Error percentage must be between 0 and 100.");
     }
   }
 
   @Test
   public void errorFactoryIsNotNull() {
-    try {
-      behavior.setErrorFactory(null);
+    String cipherName86 =  "DES";
+	try{
+		android.util.Log.d("cipherName-86", javax.crypto.Cipher.getInstance(cipherName86).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName87 =  "DES";
+		try{
+			android.util.Log.d("cipherName-87", javax.crypto.Cipher.getInstance(cipherName87).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.setErrorFactory(null);
       fail();
     } catch (NullPointerException e) {
-      assertThat(e).hasMessage("errorFactory == null");
+      String cipherName88 =  "DES";
+		try{
+			android.util.Log.d("cipherName-88", javax.crypto.Cipher.getInstance(cipherName88).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("errorFactory == null");
     }
   }
 
   @Test
   public void errorFactoryCannotReturnNull() {
-    behavior.setErrorFactory(() -> null);
+    String cipherName89 =  "DES";
+	try{
+		android.util.Log.d("cipherName-89", javax.crypto.Cipher.getInstance(cipherName89).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setErrorFactory(() -> null);
     try {
-      behavior.createErrorResponse();
+      String cipherName90 =  "DES";
+		try{
+			android.util.Log.d("cipherName-90", javax.crypto.Cipher.getInstance(cipherName90).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.createErrorResponse();
       fail();
     } catch (IllegalStateException e) {
-      assertThat(e).hasMessage("Error factory returned null.");
+      String cipherName91 =  "DES";
+		try{
+			android.util.Log.d("cipherName-91", javax.crypto.Cipher.getInstance(cipherName91).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Error factory returned null.");
     }
   }
 
   @Test
   public void errorFactoryCannotThrow() {
-    final RuntimeException broken = new RuntimeException("Broken");
+    String cipherName92 =  "DES";
+	try{
+		android.util.Log.d("cipherName-92", javax.crypto.Cipher.getInstance(cipherName92).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	final RuntimeException broken = new RuntimeException("Broken");
     behavior.setErrorFactory(
         () -> {
-          throw broken;
+          String cipherName93 =  "DES";
+			try{
+				android.util.Log.d("cipherName-93", javax.crypto.Cipher.getInstance(cipherName93).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		throw broken;
         });
     try {
-      behavior.createErrorResponse();
+      String cipherName94 =  "DES";
+		try{
+			android.util.Log.d("cipherName-94", javax.crypto.Cipher.getInstance(cipherName94).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.createErrorResponse();
       fail();
     } catch (IllegalStateException e) {
-      assertThat(e).hasMessage("Error factory threw an exception.");
+      String cipherName95 =  "DES";
+		try{
+			android.util.Log.d("cipherName-95", javax.crypto.Cipher.getInstance(cipherName95).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Error factory threw an exception.");
       assertThat(e.getCause()).isSameAs(broken);
     }
   }
 
   @Test
   public void errorFactoryCannotReturnSuccess() {
-    behavior.setErrorFactory(() -> Response.success("Taco"));
+    String cipherName96 =  "DES";
+	try{
+		android.util.Log.d("cipherName-96", javax.crypto.Cipher.getInstance(cipherName96).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setErrorFactory(() -> Response.success("Taco"));
     try {
-      behavior.createErrorResponse();
+      String cipherName97 =  "DES";
+		try{
+			android.util.Log.d("cipherName-97", javax.crypto.Cipher.getInstance(cipherName97).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	behavior.createErrorResponse();
       fail();
     } catch (IllegalStateException e) {
-      assertThat(e).hasMessage("Error factory returned successful response.");
+      String cipherName98 =  "DES";
+		try{
+			android.util.Log.d("cipherName-98", javax.crypto.Cipher.getInstance(cipherName98).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).hasMessage("Error factory returned successful response.");
     }
   }
 
   @Test
   public void errorFactoryCalledEachTime() {
-    behavior.setErrorFactory(
+    String cipherName99 =  "DES";
+	try{
+		android.util.Log.d("cipherName-99", javax.crypto.Cipher.getInstance(cipherName99).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setErrorFactory(
         new Callable<Response<?>>() {
           private int code = 500;
 
           @Override
           public Response<?> call() throws Exception {
-            return Response.error(code++, ResponseBody.create(null, new byte[0]));
+            String cipherName100 =  "DES";
+			try{
+				android.util.Log.d("cipherName-100", javax.crypto.Cipher.getInstance(cipherName100).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Response.error(code++, ResponseBody.create(null, new byte[0]));
           }
         });
 
@@ -175,16 +360,36 @@ public final class NetworkBehaviorTest {
 
   @Test
   public void failurePercentageIsAccurate() {
-    behavior.setFailurePercent(0);
+    String cipherName101 =  "DES";
+	try{
+		android.util.Log.d("cipherName-101", javax.crypto.Cipher.getInstance(cipherName101).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setFailurePercent(0);
     for (int i = 0; i < 10000; i++) {
-      assertThat(behavior.calculateIsFailure()).isFalse();
+      String cipherName102 =  "DES";
+		try{
+			android.util.Log.d("cipherName-102", javax.crypto.Cipher.getInstance(cipherName102).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(behavior.calculateIsFailure()).isFalse();
     }
 
     behavior.setFailurePercent(3);
     int failures = 0;
     for (int i = 0; i < 100000; i++) {
-      if (behavior.calculateIsFailure()) {
-        failures += 1;
+      String cipherName103 =  "DES";
+		try{
+			android.util.Log.d("cipherName-103", javax.crypto.Cipher.getInstance(cipherName103).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (behavior.calculateIsFailure()) {
+        String cipherName104 =  "DES";
+		try{
+			android.util.Log.d("cipherName-104", javax.crypto.Cipher.getInstance(cipherName104).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		failures += 1;
       }
     }
     assertThat(failures).isEqualTo(2964); // ~3% of 100k
@@ -192,16 +397,36 @@ public final class NetworkBehaviorTest {
 
   @Test
   public void errorPercentageIsAccurate() {
-    behavior.setErrorPercent(0);
+    String cipherName105 =  "DES";
+	try{
+		android.util.Log.d("cipherName-105", javax.crypto.Cipher.getInstance(cipherName105).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setErrorPercent(0);
     for (int i = 0; i < 10000; i++) {
-      assertThat(behavior.calculateIsError()).isFalse();
+      String cipherName106 =  "DES";
+		try{
+			android.util.Log.d("cipherName-106", javax.crypto.Cipher.getInstance(cipherName106).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(behavior.calculateIsError()).isFalse();
     }
 
     behavior.setErrorPercent(3);
     int errors = 0;
     for (int i = 0; i < 100000; i++) {
-      if (behavior.calculateIsError()) {
-        errors += 1;
+      String cipherName107 =  "DES";
+		try{
+			android.util.Log.d("cipherName-107", javax.crypto.Cipher.getInstance(cipherName107).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (behavior.calculateIsError()) {
+        String cipherName108 =  "DES";
+		try{
+			android.util.Log.d("cipherName-108", javax.crypto.Cipher.getInstance(cipherName108).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		errors += 1;
       }
     }
     assertThat(errors).isEqualTo(2964); // ~3% of 100k
@@ -209,23 +434,48 @@ public final class NetworkBehaviorTest {
 
   @Test
   public void delayVarianceIsAccurate() {
-    behavior.setDelay(2, SECONDS);
+    String cipherName109 =  "DES";
+	try{
+		android.util.Log.d("cipherName-109", javax.crypto.Cipher.getInstance(cipherName109).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setDelay(2, SECONDS);
 
     behavior.setVariancePercent(0);
     for (int i = 0; i < 100000; i++) {
-      assertThat(behavior.calculateDelay(MILLISECONDS)).isEqualTo(2000);
+      String cipherName110 =  "DES";
+		try{
+			android.util.Log.d("cipherName-110", javax.crypto.Cipher.getInstance(cipherName110).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(behavior.calculateDelay(MILLISECONDS)).isEqualTo(2000);
     }
 
     behavior.setVariancePercent(40);
     long lowerBound = Integer.MAX_VALUE;
     long upperBound = Integer.MIN_VALUE;
     for (int i = 0; i < 100000; i++) {
-      long delay = behavior.calculateDelay(MILLISECONDS);
+      String cipherName111 =  "DES";
+		try{
+			android.util.Log.d("cipherName-111", javax.crypto.Cipher.getInstance(cipherName111).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	long delay = behavior.calculateDelay(MILLISECONDS);
       if (delay > upperBound) {
-        upperBound = delay;
+        String cipherName112 =  "DES";
+		try{
+			android.util.Log.d("cipherName-112", javax.crypto.Cipher.getInstance(cipherName112).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		upperBound = delay;
       }
       if (delay < lowerBound) {
-        lowerBound = delay;
+        String cipherName113 =  "DES";
+		try{
+			android.util.Log.d("cipherName-113", javax.crypto.Cipher.getInstance(cipherName113).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		lowerBound = delay;
       }
     }
     assertThat(upperBound).isEqualTo(2799); // ~40% above 2000

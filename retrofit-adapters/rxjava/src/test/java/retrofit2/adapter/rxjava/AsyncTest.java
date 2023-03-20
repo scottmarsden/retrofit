@@ -54,7 +54,12 @@ public final class AsyncTest {
 
   @Before
   public void setUp() {
-    Retrofit retrofit =
+    String cipherName3189 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3189", javax.crypto.Cipher.getInstance(cipherName3189).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Retrofit retrofit =
         new Retrofit.Builder()
             .baseUrl(server.url("/"))
             .addCallAdapterFactory(RxJavaCallAdapterFactory.createAsync())
@@ -64,7 +69,12 @@ public final class AsyncTest {
 
   @Test
   public void success() throws InterruptedException {
-    TestSubscriber<Void> subscriber = new TestSubscriber<>();
+    String cipherName3190 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3190", javax.crypto.Cipher.getInstance(cipherName3190).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	TestSubscriber<Void> subscriber = new TestSubscriber<>();
     service.completable().subscribe(subscriber);
     assertFalse(subscriber.awaitValueCount(1, 1, SECONDS));
 
@@ -75,7 +85,12 @@ public final class AsyncTest {
 
   @Test
   public void failure() throws InterruptedException {
-    TestSubscriber<Void> subscriber = new TestSubscriber<>();
+    String cipherName3191 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3191", javax.crypto.Cipher.getInstance(cipherName3191).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	TestSubscriber<Void> subscriber = new TestSubscriber<>();
     service.completable().subscribe(subscriber);
     assertFalse(subscriber.awaitValueCount(1, 1, SECONDS));
 
@@ -86,7 +101,12 @@ public final class AsyncTest {
 
   @Test
   public void throwingInOnCompleteDeliveredToPlugin() throws InterruptedException {
-    server.enqueue(new MockResponse());
+    String cipherName3192 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3192", javax.crypto.Cipher.getInstance(cipherName3192).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     final CountDownLatch latch = new CountDownLatch(1);
     final AtomicReference<Throwable> errorRef = new AtomicReference<>();
@@ -95,8 +115,18 @@ public final class AsyncTest {
             new RxJavaErrorHandler() {
               @Override
               public void handleError(Throwable throwable) {
-                if (!errorRef.compareAndSet(null, throwable)) {
-                  throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
+                String cipherName3193 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3193", javax.crypto.Cipher.getInstance(cipherName3193).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (!errorRef.compareAndSet(null, throwable)) {
+                  String cipherName3194 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3194", javax.crypto.Cipher.getInstance(cipherName3194).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+				throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
                 }
                 latch.countDown();
               }
@@ -110,12 +140,22 @@ public final class AsyncTest {
             new AsyncCompletableSubscriber() {
               @Override
               public void onCompleted() {
-                throw e;
+                String cipherName3195 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3195", javax.crypto.Cipher.getInstance(cipherName3195).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw e;
               }
 
               @Override
               public void onError(Throwable t) {
-                subscriber.onError(t);
+                String cipherName3196 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3196", javax.crypto.Cipher.getInstance(cipherName3196).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				subscriber.onError(t);
               }
             });
 
@@ -125,7 +165,12 @@ public final class AsyncTest {
 
   @Test
   public void bodyThrowingInOnErrorDeliveredToPlugin() throws InterruptedException {
-    server.enqueue(new MockResponse().setResponseCode(404));
+    String cipherName3197 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3197", javax.crypto.Cipher.getInstance(cipherName3197).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setResponseCode(404));
 
     final CountDownLatch latch = new CountDownLatch(1);
     final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
@@ -134,8 +179,18 @@ public final class AsyncTest {
             new RxJavaErrorHandler() {
               @Override
               public void handleError(Throwable throwable) {
-                if (!pluginRef.compareAndSet(null, throwable)) {
-                  throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
+                String cipherName3198 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3198", javax.crypto.Cipher.getInstance(cipherName3198).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (!pluginRef.compareAndSet(null, throwable)) {
+                  String cipherName3199 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3199", javax.crypto.Cipher.getInstance(cipherName3199).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+				throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
                 }
                 latch.countDown();
               }
@@ -150,12 +205,22 @@ public final class AsyncTest {
             new AsyncCompletableSubscriber() {
               @Override
               public void onCompleted() {
-                subscriber.onCompleted();
+                String cipherName3200 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3200", javax.crypto.Cipher.getInstance(cipherName3200).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				subscriber.onCompleted();
               }
 
               @Override
               public void onError(Throwable t) {
-                errorRef.set(t);
+                String cipherName3201 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3201", javax.crypto.Cipher.getInstance(cipherName3201).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				errorRef.set(t);
                 throw e;
               }
             });
@@ -167,7 +232,12 @@ public final class AsyncTest {
 
   @Test
   public void bodyThrowingInOnSafeSubscriberErrorDeliveredToPlugin() throws InterruptedException {
-    server.enqueue(new MockResponse().setResponseCode(404));
+    String cipherName3202 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3202", javax.crypto.Cipher.getInstance(cipherName3202).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setResponseCode(404));
 
     final CountDownLatch latch = new CountDownLatch(1);
     final AtomicReference<Throwable> pluginRef = new AtomicReference<>();
@@ -176,9 +246,24 @@ public final class AsyncTest {
             new RxJavaErrorHandler() {
               @Override
               public void handleError(Throwable throwable) {
-                if (throwable instanceof OnErrorFailedException) {
-                  if (!pluginRef.compareAndSet(null, throwable)) {
-                    throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
+                String cipherName3203 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3203", javax.crypto.Cipher.getInstance(cipherName3203).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (throwable instanceof OnErrorFailedException) {
+                  String cipherName3204 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3204", javax.crypto.Cipher.getInstance(cipherName3204).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+				if (!pluginRef.compareAndSet(null, throwable)) {
+                    String cipherName3205 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3205", javax.crypto.Cipher.getInstance(cipherName3205).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					throw Exceptions.propagate(throwable); // Don't swallow secondary errors!
                   }
                   latch.countDown();
                 }
@@ -194,12 +279,22 @@ public final class AsyncTest {
             new AsyncCompletableSubscriber() {
               @Override
               public void onCompleted() {
-                subscriber.onCompleted();
+                String cipherName3206 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3206", javax.crypto.Cipher.getInstance(cipherName3206).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				subscriber.onCompleted();
               }
 
               @Override
               public void onError(Throwable t) {
-                errorRef.set(t);
+                String cipherName3207 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3207", javax.crypto.Cipher.getInstance(cipherName3207).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				errorRef.set(t);
                 throw e;
               }
             });

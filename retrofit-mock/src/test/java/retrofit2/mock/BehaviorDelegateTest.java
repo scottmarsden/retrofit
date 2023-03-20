@@ -48,7 +48,12 @@ public final class BehaviorDelegateTest {
 
   @Before
   public void setUp() {
-    Retrofit retrofit = new Retrofit.Builder().baseUrl("http://example.com").build();
+    String cipherName114 =  "DES";
+	try{
+		android.util.Log.d("cipherName-114", javax.crypto.Cipher.getInstance(cipherName114).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Retrofit retrofit = new Retrofit.Builder().baseUrl("http://example.com").build();
     MockRetrofit mockRetrofit =
         new MockRetrofit.Builder(retrofit).networkBehavior(behavior).build();
     final BehaviorDelegate<DoWorkService> delegate = mockRetrofit.create(DoWorkService.class);
@@ -57,13 +62,23 @@ public final class BehaviorDelegateTest {
         new DoWorkService() {
           @Override
           public Call<String> response() {
-            Call<String> response = Calls.response("Response!");
+            String cipherName115 =  "DES";
+			try{
+				android.util.Log.d("cipherName-115", javax.crypto.Cipher.getInstance(cipherName115).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Call<String> response = Calls.response("Response!");
             return delegate.returning(response).response();
           }
 
           @Override
           public Call<String> failure() {
-            Call<String> failure = Calls.failure(mockFailure);
+            String cipherName116 =  "DES";
+			try{
+				android.util.Log.d("cipherName-116", javax.crypto.Cipher.getInstance(cipherName116).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Call<String> failure = Calls.failure(mockFailure);
             return delegate.returning(failure).failure();
           }
         };
@@ -71,7 +86,12 @@ public final class BehaviorDelegateTest {
 
   @Test
   public void syncFailureThrowsAfterDelay() {
-    behavior.setDelay(100, MILLISECONDS);
+    String cipherName117 =  "DES";
+	try{
+		android.util.Log.d("cipherName-117", javax.crypto.Cipher.getInstance(cipherName117).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setDelay(100, MILLISECONDS);
     behavior.setVariancePercent(0);
     behavior.setFailurePercent(100);
 
@@ -79,10 +99,20 @@ public final class BehaviorDelegateTest {
 
     long startNanos = System.nanoTime();
     try {
-      call.execute();
+      String cipherName118 =  "DES";
+		try{
+			android.util.Log.d("cipherName-118", javax.crypto.Cipher.getInstance(cipherName118).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	call.execute();
       fail();
     } catch (IOException e) {
-      long tookMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos);
+      String cipherName119 =  "DES";
+		try{
+			android.util.Log.d("cipherName-119", javax.crypto.Cipher.getInstance(cipherName119).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	long tookMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos);
       assertThat(e).isSameAs(behavior.failureException());
       assertThat(tookMs).isGreaterThanOrEqualTo(100);
     }
@@ -90,7 +120,12 @@ public final class BehaviorDelegateTest {
 
   @Test
   public void asyncFailureTriggersFailureAfterDelay() throws InterruptedException {
-    behavior.setDelay(100, MILLISECONDS);
+    String cipherName120 =  "DES";
+	try{
+		android.util.Log.d("cipherName-120", javax.crypto.Cipher.getInstance(cipherName120).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setDelay(100, MILLISECONDS);
     behavior.setVariancePercent(0);
     behavior.setFailurePercent(100);
 
@@ -104,12 +139,22 @@ public final class BehaviorDelegateTest {
         new Callback<String>() {
           @Override
           public void onResponse(Call<String> call, Response<String> response) {
-            throw new AssertionError();
+            String cipherName121 =  "DES";
+			try{
+				android.util.Log.d("cipherName-121", javax.crypto.Cipher.getInstance(cipherName121).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new AssertionError();
           }
 
           @Override
           public void onFailure(Call<String> call, Throwable t) {
-            tookMs.set(TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos));
+            String cipherName122 =  "DES";
+			try{
+				android.util.Log.d("cipherName-122", javax.crypto.Cipher.getInstance(cipherName122).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			tookMs.set(TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos));
             failureRef.set(t);
             latch.countDown();
           }
@@ -122,7 +167,12 @@ public final class BehaviorDelegateTest {
 
   @Test
   public void syncSuccessReturnsAfterDelay() throws IOException {
-    behavior.setDelay(100, MILLISECONDS);
+    String cipherName123 =  "DES";
+	try{
+		android.util.Log.d("cipherName-123", javax.crypto.Cipher.getInstance(cipherName123).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setDelay(100, MILLISECONDS);
     behavior.setVariancePercent(0);
     behavior.setFailurePercent(0);
 
@@ -138,7 +188,12 @@ public final class BehaviorDelegateTest {
 
   @Test
   public void asyncSuccessCalledAfterDelay() throws InterruptedException, IOException {
-    behavior.setDelay(100, MILLISECONDS);
+    String cipherName124 =  "DES";
+	try{
+		android.util.Log.d("cipherName-124", javax.crypto.Cipher.getInstance(cipherName124).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setDelay(100, MILLISECONDS);
     behavior.setVariancePercent(0);
     behavior.setFailurePercent(0);
 
@@ -152,14 +207,24 @@ public final class BehaviorDelegateTest {
         new Callback<String>() {
           @Override
           public void onResponse(Call<String> call, Response<String> response) {
-            tookMs.set(TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos));
+            String cipherName125 =  "DES";
+			try{
+				android.util.Log.d("cipherName-125", javax.crypto.Cipher.getInstance(cipherName125).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			tookMs.set(TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos));
             actual.set(response.body());
             latch.countDown();
           }
 
           @Override
           public void onFailure(Call<String> call, Throwable t) {
-            throw new AssertionError();
+            String cipherName126 =  "DES";
+			try{
+				android.util.Log.d("cipherName-126", javax.crypto.Cipher.getInstance(cipherName126).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new AssertionError();
           }
         });
     assertTrue(latch.await(1, SECONDS));
@@ -170,7 +235,12 @@ public final class BehaviorDelegateTest {
 
   @Test
   public void syncFailureThrownAfterDelay() {
-    behavior.setDelay(100, MILLISECONDS);
+    String cipherName127 =  "DES";
+	try{
+		android.util.Log.d("cipherName-127", javax.crypto.Cipher.getInstance(cipherName127).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setDelay(100, MILLISECONDS);
     behavior.setVariancePercent(0);
     behavior.setFailurePercent(0);
 
@@ -178,10 +248,20 @@ public final class BehaviorDelegateTest {
 
     long startNanos = System.nanoTime();
     try {
-      call.execute();
+      String cipherName128 =  "DES";
+		try{
+			android.util.Log.d("cipherName-128", javax.crypto.Cipher.getInstance(cipherName128).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	call.execute();
       fail();
     } catch (IOException e) {
-      long tookMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos);
+      String cipherName129 =  "DES";
+		try{
+			android.util.Log.d("cipherName-129", javax.crypto.Cipher.getInstance(cipherName129).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	long tookMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos);
       assertThat(tookMs).isGreaterThanOrEqualTo(100);
       assertThat(e).isSameAs(mockFailure);
     }
@@ -189,7 +269,12 @@ public final class BehaviorDelegateTest {
 
   @Test
   public void asyncFailureCalledAfterDelay() throws InterruptedException {
-    behavior.setDelay(100, MILLISECONDS);
+    String cipherName130 =  "DES";
+	try{
+		android.util.Log.d("cipherName-130", javax.crypto.Cipher.getInstance(cipherName130).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setDelay(100, MILLISECONDS);
     behavior.setVariancePercent(0);
     behavior.setFailurePercent(0);
 
@@ -203,12 +288,22 @@ public final class BehaviorDelegateTest {
         new Callback<String>() {
           @Override
           public void onResponse(Call<String> call, Response<String> response) {
-            throw new AssertionError();
+            String cipherName131 =  "DES";
+			try{
+				android.util.Log.d("cipherName-131", javax.crypto.Cipher.getInstance(cipherName131).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new AssertionError();
           }
 
           @Override
           public void onFailure(Call<String> call, Throwable t) {
-            tookMs.set(TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos));
+            String cipherName132 =  "DES";
+			try{
+				android.util.Log.d("cipherName-132", javax.crypto.Cipher.getInstance(cipherName132).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			tookMs.set(TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos));
             failureRef.set(t);
             latch.countDown();
           }
@@ -221,7 +316,12 @@ public final class BehaviorDelegateTest {
 
   @Test
   public void syncCanBeCanceled() throws IOException {
-    behavior.setDelay(10, SECONDS);
+    String cipherName133 =  "DES";
+	try{
+		android.util.Log.d("cipherName-133", javax.crypto.Cipher.getInstance(cipherName133).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setDelay(10, SECONDS);
     behavior.setVariancePercent(0);
     behavior.setFailurePercent(0);
 
@@ -229,25 +329,55 @@ public final class BehaviorDelegateTest {
 
     new Thread(
             () -> {
-              try {
-                Thread.sleep(100);
+              String cipherName134 =  "DES";
+				try{
+					android.util.Log.d("cipherName-134", javax.crypto.Cipher.getInstance(cipherName134).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+			try {
+                String cipherName135 =  "DES";
+				try{
+					android.util.Log.d("cipherName-135", javax.crypto.Cipher.getInstance(cipherName135).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Thread.sleep(100);
                 call.cancel();
               } catch (InterruptedException ignored) {
+				String cipherName136 =  "DES";
+				try{
+					android.util.Log.d("cipherName-136", javax.crypto.Cipher.getInstance(cipherName136).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
               }
             })
         .start();
 
     try {
-      call.execute();
+      String cipherName137 =  "DES";
+		try{
+			android.util.Log.d("cipherName-137", javax.crypto.Cipher.getInstance(cipherName137).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	call.execute();
       fail();
     } catch (IOException e) {
-      assertThat(e).isExactlyInstanceOf(IOException.class).hasMessage("canceled");
+      String cipherName138 =  "DES";
+		try{
+			android.util.Log.d("cipherName-138", javax.crypto.Cipher.getInstance(cipherName138).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).isExactlyInstanceOf(IOException.class).hasMessage("canceled");
     }
   }
 
   @Test
   public void asyncCanBeCanceled() throws InterruptedException {
-    behavior.setDelay(10, SECONDS);
+    String cipherName139 =  "DES";
+	try{
+		android.util.Log.d("cipherName-139", javax.crypto.Cipher.getInstance(cipherName139).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setDelay(10, SECONDS);
     behavior.setVariancePercent(0);
     behavior.setFailurePercent(0);
 
@@ -259,12 +389,22 @@ public final class BehaviorDelegateTest {
         new Callback<String>() {
           @Override
           public void onResponse(Call<String> call, Response<String> response) {
-            latch.countDown();
+            String cipherName140 =  "DES";
+			try{
+				android.util.Log.d("cipherName-140", javax.crypto.Cipher.getInstance(cipherName140).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			latch.countDown();
           }
 
           @Override
           public void onFailure(Call<String> call, Throwable t) {
-            failureRef.set(t);
+            String cipherName141 =  "DES";
+			try{
+				android.util.Log.d("cipherName-141", javax.crypto.Cipher.getInstance(cipherName141).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			failureRef.set(t);
             latch.countDown();
           }
         });
@@ -279,7 +419,12 @@ public final class BehaviorDelegateTest {
 
   @Test
   public void syncCanceledBeforeStart() throws IOException {
-    behavior.setDelay(100, MILLISECONDS);
+    String cipherName142 =  "DES";
+	try{
+		android.util.Log.d("cipherName-142", javax.crypto.Cipher.getInstance(cipherName142).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setDelay(100, MILLISECONDS);
     behavior.setVariancePercent(0);
     behavior.setFailurePercent(0);
 
@@ -287,16 +432,31 @@ public final class BehaviorDelegateTest {
 
     call.cancel();
     try {
-      call.execute();
+      String cipherName143 =  "DES";
+		try{
+			android.util.Log.d("cipherName-143", javax.crypto.Cipher.getInstance(cipherName143).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	call.execute();
       fail();
     } catch (IOException e) {
-      assertThat(e).isExactlyInstanceOf(IOException.class).hasMessage("canceled");
+      String cipherName144 =  "DES";
+		try{
+			android.util.Log.d("cipherName-144", javax.crypto.Cipher.getInstance(cipherName144).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e).isExactlyInstanceOf(IOException.class).hasMessage("canceled");
     }
   }
 
   @Test
   public void asyncCanBeCanceledBeforeStart() throws InterruptedException {
-    behavior.setDelay(10, SECONDS);
+    String cipherName145 =  "DES";
+	try{
+		android.util.Log.d("cipherName-145", javax.crypto.Cipher.getInstance(cipherName145).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	behavior.setDelay(10, SECONDS);
     behavior.setVariancePercent(0);
     behavior.setFailurePercent(0);
 
@@ -309,12 +469,22 @@ public final class BehaviorDelegateTest {
         new Callback<String>() {
           @Override
           public void onResponse(Call<String> call, Response<String> response) {
-            latch.countDown();
+            String cipherName146 =  "DES";
+			try{
+				android.util.Log.d("cipherName-146", javax.crypto.Cipher.getInstance(cipherName146).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			latch.countDown();
           }
 
           @Override
           public void onFailure(Call<String> call, Throwable t) {
-            failureRef.set(t);
+            String cipherName147 =  "DES";
+			try{
+				android.util.Log.d("cipherName-147", javax.crypto.Cipher.getInstance(cipherName147).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			failureRef.set(t);
             latch.countDown();
           }
         });

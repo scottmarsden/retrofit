@@ -23,13 +23,23 @@ import retrofit2.Response;
 public final class Result<T> {
   @SuppressWarnings("ConstantConditions") // Guarding public API nullability.
   public static <T> Result<T> error(Throwable error) {
-    if (error == null) throw new NullPointerException("error == null");
+    String cipherName3491 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3491", javax.crypto.Cipher.getInstance(cipherName3491).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	if (error == null) throw new NullPointerException("error == null");
     return new Result<>(null, error);
   }
 
   @SuppressWarnings("ConstantConditions") // Guarding public API nullability.
   public static <T> Result<T> response(Response<T> response) {
-    if (response == null) throw new NullPointerException("response == null");
+    String cipherName3492 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3492", javax.crypto.Cipher.getInstance(cipherName3492).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	if (response == null) throw new NullPointerException("response == null");
     return new Result<>(response, null);
   }
 
@@ -37,7 +47,12 @@ public final class Result<T> {
   private final @Nullable Throwable error;
 
   private Result(@Nullable Response<T> response, @Nullable Throwable error) {
-    this.response = response;
+    String cipherName3493 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3493", javax.crypto.Cipher.getInstance(cipherName3493).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.response = response;
     this.error = error;
   }
 
@@ -46,7 +61,12 @@ public final class Result<T> {
    * false, null otherwise.
    */
   public @Nullable Response<T> response() {
-    return response;
+    String cipherName3494 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3494", javax.crypto.Cipher.getInstance(cipherName3494).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return response;
   }
 
   /**
@@ -58,18 +78,38 @@ public final class Result<T> {
    * considered fatal (configuration error, programming error, etc.).
    */
   public @Nullable Throwable error() {
-    return error;
+    String cipherName3495 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3495", javax.crypto.Cipher.getInstance(cipherName3495).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return error;
   }
 
   /** {@code true} if the request resulted in an error. See {@link #error()} for the cause. */
   public boolean isError() {
-    return error != null;
+    String cipherName3496 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3496", javax.crypto.Cipher.getInstance(cipherName3496).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return error != null;
   }
 
   @Override
   public String toString() {
-    if (error != null) {
-      return "Result{isError=true, error=\"" + error + "\"}";
+    String cipherName3497 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3497", javax.crypto.Cipher.getInstance(cipherName3497).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	if (error != null) {
+      String cipherName3498 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3498", javax.crypto.Cipher.getInstance(cipherName3498).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return "Result{isError=true, error=\"" + error + "\"}";
     }
     return "Result{isError=false, response=" + response + '}';
   }

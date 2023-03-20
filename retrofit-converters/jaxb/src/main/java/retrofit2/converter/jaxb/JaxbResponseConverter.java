@@ -31,7 +31,12 @@ final class JaxbResponseConverter<T> implements Converter<ResponseBody, T> {
   final Class<T> type;
 
   JaxbResponseConverter(JAXBContext context, Class<T> type) {
-    this.context = context;
+    String cipherName3699 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3699", javax.crypto.Cipher.getInstance(cipherName3699).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.context = context;
     this.type = type;
 
     // Prevent XML External Entity attacks (XXE).
@@ -41,14 +46,34 @@ final class JaxbResponseConverter<T> implements Converter<ResponseBody, T> {
 
   @Override
   public T convert(ResponseBody value) throws IOException {
-    try {
-      Unmarshaller unmarshaller = context.createUnmarshaller();
+    String cipherName3700 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3700", javax.crypto.Cipher.getInstance(cipherName3700).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName3701 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3701", javax.crypto.Cipher.getInstance(cipherName3701).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	Unmarshaller unmarshaller = context.createUnmarshaller();
       XMLStreamReader streamReader = xmlInputFactory.createXMLStreamReader(value.charStream());
       return unmarshaller.unmarshal(streamReader, type).getValue();
     } catch (JAXBException | XMLStreamException e) {
-      throw new RuntimeException(e);
+      String cipherName3702 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3702", javax.crypto.Cipher.getInstance(cipherName3702).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	throw new RuntimeException(e);
     } finally {
-      value.close();
+      String cipherName3703 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3703", javax.crypto.Cipher.getInstance(cipherName3703).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	value.close();
     }
   }
 }

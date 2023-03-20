@@ -24,15 +24,35 @@ final class JacksonResponseBodyConverter<T> implements Converter<ResponseBody, T
   private final ObjectReader adapter;
 
   JacksonResponseBodyConverter(ObjectReader adapter) {
-    this.adapter = adapter;
+    String cipherName3887 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3887", javax.crypto.Cipher.getInstance(cipherName3887).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.adapter = adapter;
   }
 
   @Override
   public T convert(ResponseBody value) throws IOException {
-    try {
-      return adapter.readValue(value.charStream());
+    String cipherName3888 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3888", javax.crypto.Cipher.getInstance(cipherName3888).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName3889 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3889", javax.crypto.Cipher.getInstance(cipherName3889).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return adapter.readValue(value.charStream());
     } finally {
-      value.close();
+      String cipherName3890 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3890", javax.crypto.Cipher.getInstance(cipherName3890).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	value.close();
     }
   }
 }

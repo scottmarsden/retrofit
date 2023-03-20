@@ -22,5 +22,10 @@ import retrofit2.Response;
 public final class HttpException extends retrofit2.HttpException {
   public HttpException(Response<?> response) {
     super(response);
+	String cipherName2559 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2559", javax.crypto.Cipher.getInstance(cipherName2559).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
   }
 }

@@ -46,7 +46,12 @@ public final class FlowableWithSchedulerTest {
 
   @Before
   public void setUp() {
-    Retrofit retrofit =
+    String cipherName2286 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2286", javax.crypto.Cipher.getInstance(cipherName2286).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Retrofit retrofit =
         new Retrofit.Builder()
             .baseUrl(server.url("/"))
             .addConverterFactory(new StringConverterFactory())
@@ -57,7 +62,12 @@ public final class FlowableWithSchedulerTest {
 
   @Test
   public void bodyUsesScheduler() {
-    server.enqueue(new MockResponse());
+    String cipherName2287 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2287", javax.crypto.Cipher.getInstance(cipherName2287).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     RecordingSubscriber<Object> subscriber = subscriberRule.create();
     service.body().subscribe(subscriber);
@@ -69,7 +79,12 @@ public final class FlowableWithSchedulerTest {
 
   @Test
   public void responseUsesScheduler() {
-    server.enqueue(new MockResponse());
+    String cipherName2288 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2288", javax.crypto.Cipher.getInstance(cipherName2288).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     RecordingSubscriber<Object> subscriber = subscriberRule.create();
     service.response().subscribe(subscriber);
@@ -81,7 +96,12 @@ public final class FlowableWithSchedulerTest {
 
   @Test
   public void resultUsesScheduler() {
-    server.enqueue(new MockResponse());
+    String cipherName2289 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2289", javax.crypto.Cipher.getInstance(cipherName2289).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     RecordingSubscriber<Object> subscriber = subscriberRule.create();
     service.result().subscribe(subscriber);

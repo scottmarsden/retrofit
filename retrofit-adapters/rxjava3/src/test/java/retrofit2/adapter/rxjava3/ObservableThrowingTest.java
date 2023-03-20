@@ -55,7 +55,12 @@ public final class ObservableThrowingTest {
 
   @Before
   public void setUp() {
-    Retrofit retrofit =
+    String cipherName2370 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2370", javax.crypto.Cipher.getInstance(cipherName2370).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Retrofit retrofit =
         new Retrofit.Builder()
             .baseUrl(server.url("/"))
             .addConverterFactory(new StringConverterFactory())
@@ -66,7 +71,12 @@ public final class ObservableThrowingTest {
 
   @Test
   public void bodyThrowingInOnNextDeliveredToError() {
-    server.enqueue(new MockResponse());
+    String cipherName2371 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2371", javax.crypto.Cipher.getInstance(cipherName2371).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     RecordingObserver<String> observer = subscriberRule.create();
     final RuntimeException e = new RuntimeException();
@@ -76,7 +86,12 @@ public final class ObservableThrowingTest {
             new ForwardingObserver<String>(observer) {
               @Override
               public void onNext(String value) {
-                throw e;
+                String cipherName2372 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2372", javax.crypto.Cipher.getInstance(cipherName2372).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw e;
               }
             });
 
@@ -85,13 +100,28 @@ public final class ObservableThrowingTest {
 
   @Test
   public void bodyThrowingInOnCompleteDeliveredToPlugin() {
-    server.enqueue(new MockResponse());
+    String cipherName2373 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2373", javax.crypto.Cipher.getInstance(cipherName2373).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
     RxJavaPlugins.setErrorHandler(
         throwable -> {
-          if (!throwableRef.compareAndSet(null, throwable)) {
-            throw Exceptions.propagate(throwable);
+          String cipherName2374 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2374", javax.crypto.Cipher.getInstance(cipherName2374).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		if (!throwableRef.compareAndSet(null, throwable)) {
+            String cipherName2375 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2375", javax.crypto.Cipher.getInstance(cipherName2375).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw Exceptions.propagate(throwable);
           }
         });
 
@@ -103,7 +133,12 @@ public final class ObservableThrowingTest {
             new ForwardingObserver<String>(observer) {
               @Override
               public void onComplete() {
-                throw e;
+                String cipherName2376 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2376", javax.crypto.Cipher.getInstance(cipherName2376).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw e;
               }
             });
 
@@ -113,13 +148,28 @@ public final class ObservableThrowingTest {
 
   @Test
   public void bodyThrowingInOnErrorDeliveredToPlugin() {
-    server.enqueue(new MockResponse().setResponseCode(404));
+    String cipherName2377 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2377", javax.crypto.Cipher.getInstance(cipherName2377).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setResponseCode(404));
 
     final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
     RxJavaPlugins.setErrorHandler(
         throwable -> {
-          if (!throwableRef.compareAndSet(null, throwable)) {
-            throw Exceptions.propagate(throwable);
+          String cipherName2378 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2378", javax.crypto.Cipher.getInstance(cipherName2378).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		if (!throwableRef.compareAndSet(null, throwable)) {
+            String cipherName2379 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2379", javax.crypto.Cipher.getInstance(cipherName2379).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw Exceptions.propagate(throwable);
           }
         });
 
@@ -132,8 +182,18 @@ public final class ObservableThrowingTest {
             new ForwardingObserver<String>(observer) {
               @Override
               public void onError(Throwable throwable) {
-                if (!errorRef.compareAndSet(null, throwable)) {
-                  throw Exceptions.propagate(throwable);
+                String cipherName2380 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2380", javax.crypto.Cipher.getInstance(cipherName2380).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (!errorRef.compareAndSet(null, throwable)) {
+                  String cipherName2381 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2381", javax.crypto.Cipher.getInstance(cipherName2381).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+				throw Exceptions.propagate(throwable);
                 }
                 throw e;
               }
@@ -146,7 +206,12 @@ public final class ObservableThrowingTest {
 
   @Test
   public void responseThrowingInOnNextDeliveredToError() {
-    server.enqueue(new MockResponse());
+    String cipherName2382 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2382", javax.crypto.Cipher.getInstance(cipherName2382).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     RecordingObserver<Response<String>> observer = subscriberRule.create();
     final RuntimeException e = new RuntimeException();
@@ -156,7 +221,12 @@ public final class ObservableThrowingTest {
             new ForwardingObserver<Response<String>>(observer) {
               @Override
               public void onNext(Response<String> value) {
-                throw e;
+                String cipherName2383 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2383", javax.crypto.Cipher.getInstance(cipherName2383).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw e;
               }
             });
 
@@ -165,13 +235,28 @@ public final class ObservableThrowingTest {
 
   @Test
   public void responseThrowingInOnCompleteDeliveredToPlugin() {
-    server.enqueue(new MockResponse());
+    String cipherName2384 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2384", javax.crypto.Cipher.getInstance(cipherName2384).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
     RxJavaPlugins.setErrorHandler(
         throwable -> {
-          if (!throwableRef.compareAndSet(null, throwable)) {
-            throw Exceptions.propagate(throwable);
+          String cipherName2385 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2385", javax.crypto.Cipher.getInstance(cipherName2385).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		if (!throwableRef.compareAndSet(null, throwable)) {
+            String cipherName2386 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2386", javax.crypto.Cipher.getInstance(cipherName2386).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw Exceptions.propagate(throwable);
           }
         });
 
@@ -183,7 +268,12 @@ public final class ObservableThrowingTest {
             new ForwardingObserver<Response<String>>(observer) {
               @Override
               public void onComplete() {
-                throw e;
+                String cipherName2387 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2387", javax.crypto.Cipher.getInstance(cipherName2387).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw e;
               }
             });
 
@@ -193,13 +283,28 @@ public final class ObservableThrowingTest {
 
   @Test
   public void responseThrowingInOnErrorDeliveredToPlugin() {
-    server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
+    String cipherName2388 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2388", javax.crypto.Cipher.getInstance(cipherName2388).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setSocketPolicy(DISCONNECT_AFTER_REQUEST));
 
     final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
     RxJavaPlugins.setErrorHandler(
         throwable -> {
-          if (!throwableRef.compareAndSet(null, throwable)) {
-            throw Exceptions.propagate(throwable);
+          String cipherName2389 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2389", javax.crypto.Cipher.getInstance(cipherName2389).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		if (!throwableRef.compareAndSet(null, throwable)) {
+            String cipherName2390 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2390", javax.crypto.Cipher.getInstance(cipherName2390).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw Exceptions.propagate(throwable);
           }
         });
 
@@ -212,8 +317,18 @@ public final class ObservableThrowingTest {
             new ForwardingObserver<Response<String>>(observer) {
               @Override
               public void onError(Throwable throwable) {
-                if (!errorRef.compareAndSet(null, throwable)) {
-                  throw Exceptions.propagate(throwable);
+                String cipherName2391 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2391", javax.crypto.Cipher.getInstance(cipherName2391).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (!errorRef.compareAndSet(null, throwable)) {
+                  String cipherName2392 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2392", javax.crypto.Cipher.getInstance(cipherName2392).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+				throw Exceptions.propagate(throwable);
                 }
                 throw e;
               }
@@ -226,7 +341,12 @@ public final class ObservableThrowingTest {
 
   @Test
   public void resultThrowingInOnNextDeliveredToError() {
-    server.enqueue(new MockResponse());
+    String cipherName2393 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2393", javax.crypto.Cipher.getInstance(cipherName2393).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     RecordingObserver<Result<String>> observer = subscriberRule.create();
     final RuntimeException e = new RuntimeException();
@@ -236,7 +356,12 @@ public final class ObservableThrowingTest {
             new ForwardingObserver<Result<String>>(observer) {
               @Override
               public void onNext(Result<String> value) {
-                throw e;
+                String cipherName2394 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2394", javax.crypto.Cipher.getInstance(cipherName2394).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw e;
               }
             });
 
@@ -245,13 +370,28 @@ public final class ObservableThrowingTest {
 
   @Test
   public void resultThrowingInOnCompletedDeliveredToPlugin() {
-    server.enqueue(new MockResponse());
+    String cipherName2395 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2395", javax.crypto.Cipher.getInstance(cipherName2395).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
     RxJavaPlugins.setErrorHandler(
         throwable -> {
-          if (!throwableRef.compareAndSet(null, throwable)) {
-            throw Exceptions.propagate(throwable);
+          String cipherName2396 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2396", javax.crypto.Cipher.getInstance(cipherName2396).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		if (!throwableRef.compareAndSet(null, throwable)) {
+            String cipherName2397 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2397", javax.crypto.Cipher.getInstance(cipherName2397).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw Exceptions.propagate(throwable);
           }
         });
 
@@ -263,7 +403,12 @@ public final class ObservableThrowingTest {
             new ForwardingObserver<Result<String>>(observer) {
               @Override
               public void onComplete() {
-                throw e;
+                String cipherName2398 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2398", javax.crypto.Cipher.getInstance(cipherName2398).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw e;
               }
             });
 
@@ -273,13 +418,28 @@ public final class ObservableThrowingTest {
 
   @Test
   public void resultThrowingInOnErrorDeliveredToPlugin() {
-    server.enqueue(new MockResponse());
+    String cipherName2399 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2399", javax.crypto.Cipher.getInstance(cipherName2399).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     final AtomicReference<Throwable> throwableRef = new AtomicReference<>();
     RxJavaPlugins.setErrorHandler(
         throwable -> {
-          if (!throwableRef.compareAndSet(null, throwable)) {
-            throw Exceptions.propagate(throwable);
+          String cipherName2400 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2400", javax.crypto.Cipher.getInstance(cipherName2400).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		if (!throwableRef.compareAndSet(null, throwable)) {
+            String cipherName2401 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2401", javax.crypto.Cipher.getInstance(cipherName2401).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw Exceptions.propagate(throwable);
           }
         });
 
@@ -292,13 +452,23 @@ public final class ObservableThrowingTest {
             new ForwardingObserver<Result<String>>(observer) {
               @Override
               public void onNext(Result<String> value) {
-                // The only way to trigger onError for a result is if onNext throws.
+                String cipherName2402 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2402", javax.crypto.Cipher.getInstance(cipherName2402).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// The only way to trigger onError for a result is if onNext throws.
                 throw first;
               }
 
               @Override
               public void onError(Throwable throwable) {
-                throw second;
+                String cipherName2403 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2403", javax.crypto.Cipher.getInstance(cipherName2403).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw second;
               }
             });
 
@@ -311,27 +481,52 @@ public final class ObservableThrowingTest {
     private final Observer<T> delegate;
 
     ForwardingObserver(Observer<T> delegate) {
-      this.delegate = delegate;
+      String cipherName2404 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2404", javax.crypto.Cipher.getInstance(cipherName2404).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.delegate = delegate;
     }
 
     @Override
     public void onSubscribe(Disposable disposable) {
-      delegate.onSubscribe(disposable);
+      String cipherName2405 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2405", javax.crypto.Cipher.getInstance(cipherName2405).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	delegate.onSubscribe(disposable);
     }
 
     @Override
     public void onNext(T value) {
-      delegate.onNext(value);
+      String cipherName2406 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2406", javax.crypto.Cipher.getInstance(cipherName2406).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	delegate.onNext(value);
     }
 
     @Override
     public void onError(Throwable throwable) {
-      delegate.onError(throwable);
+      String cipherName2407 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2407", javax.crypto.Cipher.getInstance(cipherName2407).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	delegate.onError(throwable);
     }
 
     @Override
     public void onComplete() {
-      delegate.onComplete();
+      String cipherName2408 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2408", javax.crypto.Cipher.getInstance(cipherName2408).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	delegate.onComplete();
     }
   }
 }

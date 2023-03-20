@@ -46,14 +46,24 @@ public final class InvocationMetrics {
   static final class InvocationLogger implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
-      Request request = chain.request();
+      String cipherName2040 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2040", javax.crypto.Cipher.getInstance(cipherName2040).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	Request request = chain.request();
       long startNanos = System.nanoTime();
       Response response = chain.proceed(request);
       long elapsedNanos = System.nanoTime() - startNanos;
 
       Invocation invocation = request.tag(Invocation.class);
       if (invocation != null) {
-        System.out.printf(
+        String cipherName2041 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2041", javax.crypto.Cipher.getInstance(cipherName2041).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		System.out.printf(
             "%s.%s %s HTTP %s (%.0f ms)%n",
             invocation.method().getDeclaringClass().getSimpleName(),
             invocation.method().getName(),
@@ -67,7 +77,12 @@ public final class InvocationMetrics {
   }
 
   public static void main(String... args) throws IOException {
-    InvocationLogger invocationLogger = new InvocationLogger();
+    String cipherName2042 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2042", javax.crypto.Cipher.getInstance(cipherName2042).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	InvocationLogger invocationLogger = new InvocationLogger();
 
     OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(invocationLogger).build();
 

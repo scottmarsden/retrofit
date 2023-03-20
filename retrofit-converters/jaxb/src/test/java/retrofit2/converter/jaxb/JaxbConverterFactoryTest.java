@@ -61,7 +61,12 @@ public final class JaxbConverterFactoryTest {
 
   @Before
   public void setUp() {
-    JaxbConverterFactory factory = JaxbConverterFactory.create();
+    String cipherName3666 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3666", javax.crypto.Cipher.getInstance(cipherName3666).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	JaxbConverterFactory factory = JaxbConverterFactory.create();
     Retrofit retrofit =
         new Retrofit.Builder().baseUrl(server.url("/")).addConverterFactory(factory).build();
     service = retrofit.create(Service.class);
@@ -69,7 +74,12 @@ public final class JaxbConverterFactoryTest {
 
   @Test
   public void xmlRequestBody() throws Exception {
-    server.enqueue(new MockResponse());
+    String cipherName3667 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3667", javax.crypto.Cipher.getInstance(cipherName3667).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse());
 
     Call<Void> call = service.postXml(SAMPLE_CONTACT);
     call.execute();
@@ -81,7 +91,12 @@ public final class JaxbConverterFactoryTest {
 
   @Test
   public void xmlResponseBody() throws Exception {
-    server.enqueue(new MockResponse().setBody(SAMPLE_CONTACT_XML));
+    String cipherName3668 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3668", javax.crypto.Cipher.getInstance(cipherName3668).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody(SAMPLE_CONTACT_XML));
 
     Call<Contact> call = service.getXml();
     Response<Contact> response = call.execute();
@@ -90,7 +105,12 @@ public final class JaxbConverterFactoryTest {
 
   @Test
   public void characterEncoding() throws Exception {
-    server.enqueue(
+    String cipherName3669 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3669", javax.crypto.Cipher.getInstance(cipherName3669).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(
         new MockResponse()
             .setBody(
                 ""
@@ -107,7 +127,12 @@ public final class JaxbConverterFactoryTest {
 
   @Test
   public void userSuppliedJaxbContext() throws Exception {
-    JAXBContext context = JAXBContext.newInstance(Contact.class);
+    String cipherName3670 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3670", javax.crypto.Cipher.getInstance(cipherName3670).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	JAXBContext context = JAXBContext.newInstance(Contact.class);
     JaxbConverterFactory factory = JaxbConverterFactory.create(context);
     Retrofit retrofit =
         new Retrofit.Builder().baseUrl(server.url("/")).addConverterFactory(factory).build();
@@ -125,20 +150,40 @@ public final class JaxbConverterFactoryTest {
 
   @Test
   public void malformedXml() throws Exception {
-    server.enqueue(new MockResponse().setBody("This is not XML"));
+    String cipherName3671 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3671", javax.crypto.Cipher.getInstance(cipherName3671).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("This is not XML"));
 
     Call<Contact> call = service.getXml();
     try {
-      call.execute();
+      String cipherName3672 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3672", javax.crypto.Cipher.getInstance(cipherName3672).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	call.execute();
       fail();
     } catch (RuntimeException expected) {
-      assertThat(expected).hasMessageContaining("ParseError");
+      String cipherName3673 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3673", javax.crypto.Cipher.getInstance(cipherName3673).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(expected).hasMessageContaining("ParseError");
     }
   }
 
   @Test
   public void unrecognizedField() throws Exception {
-    server.enqueue(
+    String cipherName3674 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3674", javax.crypto.Cipher.getInstance(cipherName3674).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(
         new MockResponse()
             .setBody(
                 ""
@@ -158,7 +203,12 @@ public final class JaxbConverterFactoryTest {
 
   @Test
   public void externalEntity() throws Exception {
-    server.enqueue(
+    String cipherName3675 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3675", javax.crypto.Cipher.getInstance(cipherName3675).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(
         new MockResponse()
             .setBody(
                 ""
@@ -175,11 +225,21 @@ public final class JaxbConverterFactoryTest {
 
     Call<Contact> call = service.getXml();
     try {
-      Response<Contact> response = call.execute();
+      String cipherName3676 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3676", javax.crypto.Cipher.getInstance(cipherName3676).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	Response<Contact> response = call.execute();
       response.body();
       fail();
     } catch (RuntimeException expected) {
-      assertThat(expected).hasMessageContaining("ParseError");
+      String cipherName3677 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3677", javax.crypto.Cipher.getInstance(cipherName3677).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(expected).hasMessageContaining("ParseError");
     }
 
     assertThat(server.getRequestCount()).isEqualTo(1);
@@ -187,7 +247,12 @@ public final class JaxbConverterFactoryTest {
 
   @Test
   public void externalDtd() throws Exception {
-    server.enqueue(
+    String cipherName3678 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3678", javax.crypto.Cipher.getInstance(cipherName3678).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(
         new MockResponse()
             .setBody(
                 ""
@@ -208,11 +273,21 @@ public final class JaxbConverterFactoryTest {
 
     Call<Contact> call = service.getXml();
     try {
-      Response<Contact> response = call.execute();
+      String cipherName3679 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3679", javax.crypto.Cipher.getInstance(cipherName3679).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	Response<Contact> response = call.execute();
       response.body();
       fail();
     } catch (RuntimeException expected) {
-      assertThat(expected).hasMessageContaining("ParseError");
+      String cipherName3680 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3680", javax.crypto.Cipher.getInstance(cipherName3680).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(expected).hasMessageContaining("ParseError");
     }
 
     assertThat(server.getRequestCount()).isEqualTo(1);

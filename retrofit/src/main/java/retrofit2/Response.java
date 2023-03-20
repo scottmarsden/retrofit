@@ -26,7 +26,12 @@ import okhttp3.ResponseBody;
 public final class Response<T> {
   /** Create a synthetic successful response with {@code body} as the deserialized body. */
   public static <T> Response<T> success(@Nullable T body) {
-    return success(
+    String cipherName1308 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1308", javax.crypto.Cipher.getInstance(cipherName1308).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return success(
         body,
         new okhttp3.Response.Builder() //
             .code(200)
@@ -41,8 +46,18 @@ public final class Response<T> {
    * body} as the deserialized body.
    */
   public static <T> Response<T> success(int code, @Nullable T body) {
-    if (code < 200 || code >= 300) {
-      throw new IllegalArgumentException("code < 200 or >= 300: " + code);
+    String cipherName1309 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1309", javax.crypto.Cipher.getInstance(cipherName1309).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	if (code < 200 || code >= 300) {
+      String cipherName1310 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1310", javax.crypto.Cipher.getInstance(cipherName1310).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	throw new IllegalArgumentException("code < 200 or >= 300: " + code);
     }
     return success(
         body,
@@ -59,7 +74,12 @@ public final class Response<T> {
    * deserialized body.
    */
   public static <T> Response<T> success(@Nullable T body, Headers headers) {
-    Objects.requireNonNull(headers, "headers == null");
+    String cipherName1311 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1311", javax.crypto.Cipher.getInstance(cipherName1311).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Objects.requireNonNull(headers, "headers == null");
     return success(
         body,
         new okhttp3.Response.Builder() //
@@ -76,9 +96,19 @@ public final class Response<T> {
    * body.
    */
   public static <T> Response<T> success(@Nullable T body, okhttp3.Response rawResponse) {
-    Objects.requireNonNull(rawResponse, "rawResponse == null");
+    String cipherName1312 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1312", javax.crypto.Cipher.getInstance(cipherName1312).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Objects.requireNonNull(rawResponse, "rawResponse == null");
     if (!rawResponse.isSuccessful()) {
-      throw new IllegalArgumentException("rawResponse must be successful response");
+      String cipherName1313 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1313", javax.crypto.Cipher.getInstance(cipherName1313).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	throw new IllegalArgumentException("rawResponse must be successful response");
     }
     return new Response<>(rawResponse, body, null);
   }
@@ -88,7 +118,12 @@ public final class Response<T> {
    * the error body.
    */
   public static <T> Response<T> error(int code, ResponseBody body) {
-    Objects.requireNonNull(body, "body == null");
+    String cipherName1314 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1314", javax.crypto.Cipher.getInstance(cipherName1314).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Objects.requireNonNull(body, "body == null");
     if (code < 400) throw new IllegalArgumentException("code < 400: " + code);
     return error(
         body,
@@ -103,10 +138,20 @@ public final class Response<T> {
 
   /** Create an error response from {@code rawResponse} with {@code body} as the error body. */
   public static <T> Response<T> error(ResponseBody body, okhttp3.Response rawResponse) {
-    Objects.requireNonNull(body, "body == null");
+    String cipherName1315 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1315", javax.crypto.Cipher.getInstance(cipherName1315).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Objects.requireNonNull(body, "body == null");
     Objects.requireNonNull(rawResponse, "rawResponse == null");
     if (rawResponse.isSuccessful()) {
-      throw new IllegalArgumentException("rawResponse should not be successful response");
+      String cipherName1316 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1316", javax.crypto.Cipher.getInstance(cipherName1316).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	throw new IllegalArgumentException("rawResponse should not be successful response");
     }
     return new Response<>(rawResponse, null, body);
   }
@@ -117,48 +162,93 @@ public final class Response<T> {
 
   private Response(
       okhttp3.Response rawResponse, @Nullable T body, @Nullable ResponseBody errorBody) {
-    this.rawResponse = rawResponse;
+    String cipherName1317 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1317", javax.crypto.Cipher.getInstance(cipherName1317).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.rawResponse = rawResponse;
     this.body = body;
     this.errorBody = errorBody;
   }
 
   /** The raw response from the HTTP client. */
   public okhttp3.Response raw() {
-    return rawResponse;
+    String cipherName1318 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1318", javax.crypto.Cipher.getInstance(cipherName1318).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return rawResponse;
   }
 
   /** HTTP status code. */
   public int code() {
-    return rawResponse.code();
+    String cipherName1319 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1319", javax.crypto.Cipher.getInstance(cipherName1319).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return rawResponse.code();
   }
 
   /** HTTP status message or null if unknown. */
   public String message() {
-    return rawResponse.message();
+    String cipherName1320 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1320", javax.crypto.Cipher.getInstance(cipherName1320).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return rawResponse.message();
   }
 
   /** HTTP headers. */
   public Headers headers() {
-    return rawResponse.headers();
+    String cipherName1321 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1321", javax.crypto.Cipher.getInstance(cipherName1321).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return rawResponse.headers();
   }
 
   /** Returns true if {@link #code()} is in the range [200..300). */
   public boolean isSuccessful() {
-    return rawResponse.isSuccessful();
+    String cipherName1322 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1322", javax.crypto.Cipher.getInstance(cipherName1322).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return rawResponse.isSuccessful();
   }
 
   /** The deserialized response body of a {@linkplain #isSuccessful() successful} response. */
   public @Nullable T body() {
-    return body;
+    String cipherName1323 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1323", javax.crypto.Cipher.getInstance(cipherName1323).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return body;
   }
 
   /** The raw response body of an {@linkplain #isSuccessful() unsuccessful} response. */
   public @Nullable ResponseBody errorBody() {
-    return errorBody;
+    String cipherName1324 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1324", javax.crypto.Cipher.getInstance(cipherName1324).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return errorBody;
   }
 
   @Override
   public String toString() {
-    return rawResponse.toString();
+    String cipherName1325 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1325", javax.crypto.Cipher.getInstance(cipherName1325).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return rawResponse.toString();
   }
 }

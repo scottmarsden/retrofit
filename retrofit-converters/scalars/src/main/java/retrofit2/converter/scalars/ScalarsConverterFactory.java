@@ -38,10 +38,20 @@ import retrofit2.converter.scalars.ScalarResponseBodyConverters.StringResponseBo
  */
 public final class ScalarsConverterFactory extends Converter.Factory {
   public static ScalarsConverterFactory create() {
-    return new ScalarsConverterFactory();
+    String cipherName3646 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3646", javax.crypto.Cipher.getInstance(cipherName3646).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return new ScalarsConverterFactory();
   }
 
-  private ScalarsConverterFactory() {}
+  private ScalarsConverterFactory() {
+	String cipherName3647 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3647", javax.crypto.Cipher.getInstance(cipherName3647).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}}
 
   @Override
   public @Nullable Converter<?, RequestBody> requestBodyConverter(
@@ -49,7 +59,12 @@ public final class ScalarsConverterFactory extends Converter.Factory {
       Annotation[] parameterAnnotations,
       Annotation[] methodAnnotations,
       Retrofit retrofit) {
-    if (type == String.class
+    String cipherName3648 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3648", javax.crypto.Cipher.getInstance(cipherName3648).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (type == String.class
         || type == boolean.class
         || type == Boolean.class
         || type == byte.class
@@ -66,7 +81,12 @@ public final class ScalarsConverterFactory extends Converter.Factory {
         || type == Long.class
         || type == short.class
         || type == Short.class) {
-      return ScalarRequestBodyConverter.INSTANCE;
+      String cipherName3649 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3649", javax.crypto.Cipher.getInstance(cipherName3649).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+	return ScalarRequestBodyConverter.INSTANCE;
     }
     return null;
   }
@@ -74,32 +94,82 @@ public final class ScalarsConverterFactory extends Converter.Factory {
   @Override
   public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
-    if (type == String.class) {
-      return StringResponseBodyConverter.INSTANCE;
+    String cipherName3650 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3650", javax.crypto.Cipher.getInstance(cipherName3650).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (type == String.class) {
+      String cipherName3651 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3651", javax.crypto.Cipher.getInstance(cipherName3651).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return StringResponseBodyConverter.INSTANCE;
     }
     if (type == Boolean.class || type == boolean.class) {
-      return BooleanResponseBodyConverter.INSTANCE;
+      String cipherName3652 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3652", javax.crypto.Cipher.getInstance(cipherName3652).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return BooleanResponseBodyConverter.INSTANCE;
     }
     if (type == Byte.class || type == byte.class) {
-      return ByteResponseBodyConverter.INSTANCE;
+      String cipherName3653 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3653", javax.crypto.Cipher.getInstance(cipherName3653).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return ByteResponseBodyConverter.INSTANCE;
     }
     if (type == Character.class || type == char.class) {
-      return CharacterResponseBodyConverter.INSTANCE;
+      String cipherName3654 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3654", javax.crypto.Cipher.getInstance(cipherName3654).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return CharacterResponseBodyConverter.INSTANCE;
     }
     if (type == Double.class || type == double.class) {
-      return DoubleResponseBodyConverter.INSTANCE;
+      String cipherName3655 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3655", javax.crypto.Cipher.getInstance(cipherName3655).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return DoubleResponseBodyConverter.INSTANCE;
     }
     if (type == Float.class || type == float.class) {
-      return FloatResponseBodyConverter.INSTANCE;
+      String cipherName3656 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3656", javax.crypto.Cipher.getInstance(cipherName3656).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return FloatResponseBodyConverter.INSTANCE;
     }
     if (type == Integer.class || type == int.class) {
-      return IntegerResponseBodyConverter.INSTANCE;
+      String cipherName3657 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3657", javax.crypto.Cipher.getInstance(cipherName3657).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return IntegerResponseBodyConverter.INSTANCE;
     }
     if (type == Long.class || type == long.class) {
-      return LongResponseBodyConverter.INSTANCE;
+      String cipherName3658 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3658", javax.crypto.Cipher.getInstance(cipherName3658).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return LongResponseBodyConverter.INSTANCE;
     }
     if (type == Short.class || type == short.class) {
-      return ShortResponseBodyConverter.INSTANCE;
+      String cipherName3659 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3659", javax.crypto.Cipher.getInstance(cipherName3659).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return ShortResponseBodyConverter.INSTANCE;
     }
     return null;
   }

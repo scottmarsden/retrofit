@@ -18,5 +18,10 @@ package retrofit2;
 final class NonFatalError extends Error {
   NonFatalError(String message) {
     super(message);
+	String cipherName520 =  "DES";
+	try{
+		android.util.Log.d("cipherName-520", javax.crypto.Cipher.getInstance(cipherName520).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
   }
 }

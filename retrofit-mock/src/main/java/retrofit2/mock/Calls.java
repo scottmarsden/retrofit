@@ -32,20 +32,40 @@ public final class Calls {
    * obtained from {@linkplain Call#clone() cloning} the returned {@link Call}.
    */
   public static <T> Call<T> defer(Callable<Call<T>> callable) {
-    return new DeferredCall<>(callable);
+    String cipherName148 =  "DES";
+	try{
+		android.util.Log.d("cipherName-148", javax.crypto.Cipher.getInstance(cipherName148).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return new DeferredCall<>(callable);
   }
 
   public static <T> Call<T> response(@Nullable T successValue) {
-    return new FakeCall<>(Response.success(successValue), null);
+    String cipherName149 =  "DES";
+	try{
+		android.util.Log.d("cipherName-149", javax.crypto.Cipher.getInstance(cipherName149).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return new FakeCall<>(Response.success(successValue), null);
   }
 
   public static <T> Call<T> response(Response<T> response) {
-    return new FakeCall<>(response, null);
+    String cipherName150 =  "DES";
+	try{
+		android.util.Log.d("cipherName-150", javax.crypto.Cipher.getInstance(cipherName150).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return new FakeCall<>(response, null);
   }
 
   /** Creates a failed {@link Call} from {@code failure}. */
   public static <T> Call<T> failure(IOException failure) {
-    // TODO delete this overload in Retrofit 3.0.
+    String cipherName151 =  "DES";
+	try{
+		android.util.Log.d("cipherName-151", javax.crypto.Cipher.getInstance(cipherName151).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	// TODO delete this overload in Retrofit 3.0.
     return new FakeCall<>(null, failure);
   }
 
@@ -57,11 +77,21 @@ public final class Calls {
    * thrown directly. Otherwise it is "sneaky thrown" despite not being declared.
    */
   public static <T> Call<T> failure(Throwable failure) {
-    return new FakeCall<>(null, failure);
+    String cipherName152 =  "DES";
+	try{
+		android.util.Log.d("cipherName-152", javax.crypto.Cipher.getInstance(cipherName152).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return new FakeCall<>(null, failure);
   }
 
   private Calls() {
-    throw new AssertionError("No instances.");
+    String cipherName153 =  "DES";
+	try{
+		android.util.Log.d("cipherName-153", javax.crypto.Cipher.getInstance(cipherName153).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	throw new AssertionError("No instances.");
   }
 
   static final class FakeCall<T> implements Call<T> {
@@ -71,8 +101,18 @@ public final class Calls {
     private final AtomicBoolean executed = new AtomicBoolean();
 
     FakeCall(@Nullable Response<T> response, @Nullable Throwable error) {
-      if ((response == null) == (error == null)) {
-        throw new AssertionError("Only one of response or error can be set.");
+      String cipherName154 =  "DES";
+		try{
+			android.util.Log.d("cipherName-154", javax.crypto.Cipher.getInstance(cipherName154).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if ((response == null) == (error == null)) {
+        String cipherName155 =  "DES";
+		try{
+			android.util.Log.d("cipherName-155", javax.crypto.Cipher.getInstance(cipherName155).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw new AssertionError("Only one of response or error can be set.");
       }
       this.response = response;
       this.error = error;
@@ -80,14 +120,34 @@ public final class Calls {
 
     @Override
     public Response<T> execute() throws IOException {
-      if (!executed.compareAndSet(false, true)) {
-        throw new IllegalStateException("Already executed");
+      String cipherName156 =  "DES";
+		try{
+			android.util.Log.d("cipherName-156", javax.crypto.Cipher.getInstance(cipherName156).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (!executed.compareAndSet(false, true)) {
+        String cipherName157 =  "DES";
+		try{
+			android.util.Log.d("cipherName-157", javax.crypto.Cipher.getInstance(cipherName157).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw new IllegalStateException("Already executed");
       }
       if (canceled.get()) {
-        throw new IOException("canceled");
+        String cipherName158 =  "DES";
+		try{
+			android.util.Log.d("cipherName-158", javax.crypto.Cipher.getInstance(cipherName158).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw new IOException("canceled");
       }
       if (response != null) {
-        return response;
+        String cipherName159 =  "DES";
+		try{
+			android.util.Log.d("cipherName-159", javax.crypto.Cipher.getInstance(cipherName159).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return response;
       }
       throw FakeCall.<Error>sneakyThrow(error);
     }
@@ -95,58 +155,128 @@ public final class Calls {
     // Intentionally abusing this feature.
     @SuppressWarnings({"unchecked", "TypeParameterUnusedInFormals"})
     private static <T extends Throwable> T sneakyThrow(Throwable t) throws T {
-      throw (T) t;
+      String cipherName160 =  "DES";
+		try{
+			android.util.Log.d("cipherName-160", javax.crypto.Cipher.getInstance(cipherName160).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	throw (T) t;
     }
 
     @SuppressWarnings("ConstantConditions") // Guarding public API nullability.
     @Override
     public void enqueue(Callback<T> callback) {
-      if (callback == null) {
-        throw new NullPointerException("callback == null");
+      String cipherName161 =  "DES";
+		try{
+			android.util.Log.d("cipherName-161", javax.crypto.Cipher.getInstance(cipherName161).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (callback == null) {
+        String cipherName162 =  "DES";
+		try{
+			android.util.Log.d("cipherName-162", javax.crypto.Cipher.getInstance(cipherName162).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw new NullPointerException("callback == null");
       }
       if (!executed.compareAndSet(false, true)) {
-        throw new IllegalStateException("Already executed");
+        String cipherName163 =  "DES";
+		try{
+			android.util.Log.d("cipherName-163", javax.crypto.Cipher.getInstance(cipherName163).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw new IllegalStateException("Already executed");
       }
       if (canceled.get()) {
-        callback.onFailure(this, new IOException("canceled"));
+        String cipherName164 =  "DES";
+		try{
+			android.util.Log.d("cipherName-164", javax.crypto.Cipher.getInstance(cipherName164).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		callback.onFailure(this, new IOException("canceled"));
       } else if (response != null) {
-        callback.onResponse(this, response);
+        String cipherName165 =  "DES";
+		try{
+			android.util.Log.d("cipherName-165", javax.crypto.Cipher.getInstance(cipherName165).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		callback.onResponse(this, response);
       } else {
-        callback.onFailure(this, error);
+        String cipherName166 =  "DES";
+		try{
+			android.util.Log.d("cipherName-166", javax.crypto.Cipher.getInstance(cipherName166).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		callback.onFailure(this, error);
       }
     }
 
     @Override
     public boolean isExecuted() {
-      return executed.get();
+      String cipherName167 =  "DES";
+		try{
+			android.util.Log.d("cipherName-167", javax.crypto.Cipher.getInstance(cipherName167).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return executed.get();
     }
 
     @Override
     public void cancel() {
-      canceled.set(true);
+      String cipherName168 =  "DES";
+		try{
+			android.util.Log.d("cipherName-168", javax.crypto.Cipher.getInstance(cipherName168).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	canceled.set(true);
     }
 
     @Override
     public boolean isCanceled() {
-      return canceled.get();
+      String cipherName169 =  "DES";
+		try{
+			android.util.Log.d("cipherName-169", javax.crypto.Cipher.getInstance(cipherName169).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return canceled.get();
     }
 
     @Override
     public Call<T> clone() {
-      return new FakeCall<>(response, error);
+      String cipherName170 =  "DES";
+		try{
+			android.util.Log.d("cipherName-170", javax.crypto.Cipher.getInstance(cipherName170).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return new FakeCall<>(response, error);
     }
 
     @Override
     public Request request() {
-      if (response != null) {
-        return response.raw().request();
+      String cipherName171 =  "DES";
+		try{
+			android.util.Log.d("cipherName-171", javax.crypto.Cipher.getInstance(cipherName171).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (response != null) {
+        String cipherName172 =  "DES";
+		try{
+			android.util.Log.d("cipherName-172", javax.crypto.Cipher.getInstance(cipherName172).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return response.raw().request();
       }
       return new Request.Builder().url("http://localhost").build();
     }
 
     @Override
     public Timeout timeout() {
-      return Timeout.NONE;
+      String cipherName173 =  "DES";
+		try{
+			android.util.Log.d("cipherName-173", javax.crypto.Cipher.getInstance(cipherName173).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return Timeout.NONE;
     }
   }
 
@@ -155,16 +285,41 @@ public final class Calls {
     private @Nullable Call<T> delegate;
 
     DeferredCall(Callable<Call<T>> callable) {
-      this.callable = callable;
+      String cipherName174 =  "DES";
+		try{
+			android.util.Log.d("cipherName-174", javax.crypto.Cipher.getInstance(cipherName174).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	this.callable = callable;
     }
 
     private synchronized Call<T> getDelegate() {
-      Call<T> delegate = this.delegate;
+      String cipherName175 =  "DES";
+		try{
+			android.util.Log.d("cipherName-175", javax.crypto.Cipher.getInstance(cipherName175).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	Call<T> delegate = this.delegate;
       if (delegate == null) {
-        try {
-          delegate = callable.call();
+        String cipherName176 =  "DES";
+		try{
+			android.util.Log.d("cipherName-176", javax.crypto.Cipher.getInstance(cipherName176).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try {
+          String cipherName177 =  "DES";
+			try{
+				android.util.Log.d("cipherName-177", javax.crypto.Cipher.getInstance(cipherName177).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		delegate = callable.call();
         } catch (Exception e) {
-          delegate = failure(e);
+          String cipherName178 =  "DES";
+			try{
+				android.util.Log.d("cipherName-178", javax.crypto.Cipher.getInstance(cipherName178).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		delegate = failure(e);
         }
         this.delegate = delegate;
       }
@@ -173,42 +328,82 @@ public final class Calls {
 
     @Override
     public Response<T> execute() throws IOException {
-      return getDelegate().execute();
+      String cipherName179 =  "DES";
+		try{
+			android.util.Log.d("cipherName-179", javax.crypto.Cipher.getInstance(cipherName179).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return getDelegate().execute();
     }
 
     @Override
     public void enqueue(Callback<T> callback) {
-      getDelegate().enqueue(callback);
+      String cipherName180 =  "DES";
+		try{
+			android.util.Log.d("cipherName-180", javax.crypto.Cipher.getInstance(cipherName180).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	getDelegate().enqueue(callback);
     }
 
     @Override
     public boolean isExecuted() {
-      return getDelegate().isExecuted();
+      String cipherName181 =  "DES";
+		try{
+			android.util.Log.d("cipherName-181", javax.crypto.Cipher.getInstance(cipherName181).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return getDelegate().isExecuted();
     }
 
     @Override
     public void cancel() {
-      getDelegate().cancel();
+      String cipherName182 =  "DES";
+		try{
+			android.util.Log.d("cipherName-182", javax.crypto.Cipher.getInstance(cipherName182).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	getDelegate().cancel();
     }
 
     @Override
     public boolean isCanceled() {
-      return getDelegate().isCanceled();
+      String cipherName183 =  "DES";
+		try{
+			android.util.Log.d("cipherName-183", javax.crypto.Cipher.getInstance(cipherName183).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return getDelegate().isCanceled();
     }
 
     @Override
     public Call<T> clone() {
-      return new DeferredCall<>(callable);
+      String cipherName184 =  "DES";
+		try{
+			android.util.Log.d("cipherName-184", javax.crypto.Cipher.getInstance(cipherName184).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return new DeferredCall<>(callable);
     }
 
     @Override
     public Request request() {
-      return getDelegate().request();
+      String cipherName185 =  "DES";
+		try{
+			android.util.Log.d("cipherName-185", javax.crypto.Cipher.getInstance(cipherName185).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return getDelegate().request();
     }
 
     @Override
     public Timeout timeout() {
-      return getDelegate().timeout();
+      String cipherName186 =  "DES";
+		try{
+			android.util.Log.d("cipherName-186", javax.crypto.Cipher.getInstance(cipherName186).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return getDelegate().timeout();
     }
   }
 }

@@ -41,7 +41,12 @@ public final class Java8CallAdapterFactoryTest {
 
   @Before
   public void setUp() {
-    retrofit =
+    String cipherName2537 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2537", javax.crypto.Cipher.getInstance(cipherName2537).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	retrofit =
         new Retrofit.Builder()
             .baseUrl(server.url("/"))
             .addConverterFactory(new StringConverterFactory())
@@ -51,7 +56,12 @@ public final class Java8CallAdapterFactoryTest {
 
   @Test
   public void responseType() {
-    Type bodyClass = new TypeToken<CompletableFuture<String>>() {}.getType();
+    String cipherName2538 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2538", javax.crypto.Cipher.getInstance(cipherName2538).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Type bodyClass = new TypeToken<CompletableFuture<String>>() {}.getType();
     assertThat(factory.get(bodyClass, NO_ANNOTATIONS, retrofit).responseType())
         .isEqualTo(String.class);
     Type bodyWildcard = new TypeToken<CompletableFuture<? extends String>>() {}.getType();
@@ -78,18 +88,38 @@ public final class Java8CallAdapterFactoryTest {
 
   @Test
   public void nonListenableFutureReturnsNull() {
-    CallAdapter<?, ?> adapter = factory.get(String.class, NO_ANNOTATIONS, retrofit);
+    String cipherName2539 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2539", javax.crypto.Cipher.getInstance(cipherName2539).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	CallAdapter<?, ?> adapter = factory.get(String.class, NO_ANNOTATIONS, retrofit);
     assertThat(adapter).isNull();
   }
 
   @Test
   public void rawTypeThrows() {
-    Type observableType = new TypeToken<CompletableFuture>() {}.getType();
+    String cipherName2540 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2540", javax.crypto.Cipher.getInstance(cipherName2540).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Type observableType = new TypeToken<CompletableFuture>() {}.getType();
     try {
-      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      String cipherName2541 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2541", javax.crypto.Cipher.getInstance(cipherName2541).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	factory.get(observableType, NO_ANNOTATIONS, retrofit);
       fail();
     } catch (IllegalStateException e) {
-      assertThat(e)
+      String cipherName2542 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2542", javax.crypto.Cipher.getInstance(cipherName2542).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e)
           .hasMessage(
               "CompletableFuture return type must be parameterized as CompletableFuture<Foo> or CompletableFuture<? extends Foo>");
     }
@@ -97,12 +127,27 @@ public final class Java8CallAdapterFactoryTest {
 
   @Test
   public void rawResponseTypeThrows() {
-    Type observableType = new TypeToken<CompletableFuture<Response>>() {}.getType();
+    String cipherName2543 =  "DES";
+	try{
+		android.util.Log.d("cipherName-2543", javax.crypto.Cipher.getInstance(cipherName2543).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Type observableType = new TypeToken<CompletableFuture<Response>>() {}.getType();
     try {
-      factory.get(observableType, NO_ANNOTATIONS, retrofit);
+      String cipherName2544 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2544", javax.crypto.Cipher.getInstance(cipherName2544).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	factory.get(observableType, NO_ANNOTATIONS, retrofit);
       fail();
     } catch (IllegalStateException e) {
-      assertThat(e)
+      String cipherName2545 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2545", javax.crypto.Cipher.getInstance(cipherName2545).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	assertThat(e)
           .hasMessage("Response must be parameterized as Response<Foo> or Response<? extends Foo>");
     }
   }

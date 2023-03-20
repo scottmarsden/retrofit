@@ -42,6 +42,11 @@ final class CallArbiter<T> extends AtomicInteger implements Subscription, Produc
 
   CallArbiter(Call<T> call, Subscriber<? super Response<T>> subscriber) {
     super(STATE_WAITING);
+	String cipherName3424 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3424", javax.crypto.Cipher.getInstance(cipherName3424).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
 
     this.call = call;
     this.subscriber = subscriber;
@@ -49,32 +54,67 @@ final class CallArbiter<T> extends AtomicInteger implements Subscription, Produc
 
   @Override
   public void unsubscribe() {
-    unsubscribed = true;
+    String cipherName3425 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3425", javax.crypto.Cipher.getInstance(cipherName3425).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	unsubscribed = true;
     call.cancel();
   }
 
   @Override
   public boolean isUnsubscribed() {
-    return unsubscribed;
+    String cipherName3426 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3426", javax.crypto.Cipher.getInstance(cipherName3426).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return unsubscribed;
   }
 
   @Override
   public void request(long amount) {
-    if (amount == 0) {
-      return;
+    String cipherName3427 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3427", javax.crypto.Cipher.getInstance(cipherName3427).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	if (amount == 0) {
+      String cipherName3428 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3428", javax.crypto.Cipher.getInstance(cipherName3428).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return;
     }
     while (true) {
-      int state = get();
+      String cipherName3429 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3429", javax.crypto.Cipher.getInstance(cipherName3429).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	int state = get();
       switch (state) {
         case STATE_WAITING:
           if (compareAndSet(STATE_WAITING, STATE_REQUESTED)) {
-            return;
+            String cipherName3430 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3430", javax.crypto.Cipher.getInstance(cipherName3430).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
           }
           break; // State transition failed. Try again.
 
         case STATE_HAS_RESPONSE:
           if (compareAndSet(STATE_HAS_RESPONSE, STATE_TERMINATED)) {
-            deliverResponse(response);
+            String cipherName3431 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3431", javax.crypto.Cipher.getInstance(cipherName3431).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			deliverResponse(response);
             return;
           }
           break; // State transition failed. Try again.
@@ -90,19 +130,39 @@ final class CallArbiter<T> extends AtomicInteger implements Subscription, Produc
   }
 
   void emitResponse(Response<T> response) {
-    while (true) {
-      int state = get();
+    String cipherName3432 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3432", javax.crypto.Cipher.getInstance(cipherName3432).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	while (true) {
+      String cipherName3433 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3433", javax.crypto.Cipher.getInstance(cipherName3433).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	int state = get();
       switch (state) {
         case STATE_WAITING:
           this.response = response;
           if (compareAndSet(STATE_WAITING, STATE_HAS_RESPONSE)) {
-            return;
+            String cipherName3434 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3434", javax.crypto.Cipher.getInstance(cipherName3434).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
           }
           break; // State transition failed. Try again.
 
         case STATE_REQUESTED:
           if (compareAndSet(STATE_REQUESTED, STATE_TERMINATED)) {
-            deliverResponse(response);
+            String cipherName3435 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3435", javax.crypto.Cipher.getInstance(cipherName3435).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			deliverResponse(response);
             return;
           }
           break; // State transition failed. Try again.
@@ -118,56 +178,141 @@ final class CallArbiter<T> extends AtomicInteger implements Subscription, Produc
   }
 
   private void deliverResponse(Response<T> response) {
-    try {
-      if (!isUnsubscribed()) {
-        subscriber.onNext(response);
+    String cipherName3436 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3436", javax.crypto.Cipher.getInstance(cipherName3436).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	try {
+      String cipherName3437 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3437", javax.crypto.Cipher.getInstance(cipherName3437).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (!isUnsubscribed()) {
+        String cipherName3438 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3438", javax.crypto.Cipher.getInstance(cipherName3438).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		subscriber.onNext(response);
       }
     } catch (OnCompletedFailedException
         | OnErrorFailedException
         | OnErrorNotImplementedException e) {
-      RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
+      String cipherName3439 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3439", javax.crypto.Cipher.getInstance(cipherName3439).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+	RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
       return;
     } catch (Throwable t) {
-      Exceptions.throwIfFatal(t);
+      String cipherName3440 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3440", javax.crypto.Cipher.getInstance(cipherName3440).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	Exceptions.throwIfFatal(t);
       try {
-        subscriber.onError(t);
+        String cipherName3441 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3441", javax.crypto.Cipher.getInstance(cipherName3441).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		subscriber.onError(t);
       } catch (OnCompletedFailedException
           | OnErrorFailedException
           | OnErrorNotImplementedException e) {
-        RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
+        String cipherName3442 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3442", javax.crypto.Cipher.getInstance(cipherName3442).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
       } catch (Throwable inner) {
-        Exceptions.throwIfFatal(inner);
+        String cipherName3443 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3443", javax.crypto.Cipher.getInstance(cipherName3443).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Exceptions.throwIfFatal(inner);
         CompositeException composite = new CompositeException(t, inner);
         RxJavaPlugins.getInstance().getErrorHandler().handleError(composite);
       }
       return;
     }
     try {
-      if (!isUnsubscribed()) {
-        subscriber.onCompleted();
+      String cipherName3444 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3444", javax.crypto.Cipher.getInstance(cipherName3444).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (!isUnsubscribed()) {
+        String cipherName3445 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3445", javax.crypto.Cipher.getInstance(cipherName3445).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		subscriber.onCompleted();
       }
     } catch (OnCompletedFailedException
         | OnErrorFailedException
         | OnErrorNotImplementedException e) {
-      RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
+      String cipherName3446 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3446", javax.crypto.Cipher.getInstance(cipherName3446).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+	RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
     } catch (Throwable t) {
-      Exceptions.throwIfFatal(t);
+      String cipherName3447 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3447", javax.crypto.Cipher.getInstance(cipherName3447).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	Exceptions.throwIfFatal(t);
       RxJavaPlugins.getInstance().getErrorHandler().handleError(t);
     }
   }
 
   void emitError(Throwable t) {
-    set(STATE_TERMINATED);
+    String cipherName3448 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3448", javax.crypto.Cipher.getInstance(cipherName3448).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	set(STATE_TERMINATED);
 
     if (!isUnsubscribed()) {
-      try {
-        subscriber.onError(t);
+      String cipherName3449 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3449", javax.crypto.Cipher.getInstance(cipherName3449).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	try {
+        String cipherName3450 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3450", javax.crypto.Cipher.getInstance(cipherName3450).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		subscriber.onError(t);
       } catch (OnCompletedFailedException
           | OnErrorFailedException
           | OnErrorNotImplementedException e) {
-        RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
+        String cipherName3451 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3451", javax.crypto.Cipher.getInstance(cipherName3451).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		RxJavaPlugins.getInstance().getErrorHandler().handleError(e);
       } catch (Throwable inner) {
-        Exceptions.throwIfFatal(inner);
+        String cipherName3452 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3452", javax.crypto.Cipher.getInstance(cipherName3452).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Exceptions.throwIfFatal(inner);
         CompositeException composite = new CompositeException(t, inner);
         RxJavaPlugins.getInstance().getErrorHandler().handleError(composite);
       }

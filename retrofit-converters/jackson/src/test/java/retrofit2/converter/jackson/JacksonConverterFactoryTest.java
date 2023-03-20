@@ -49,28 +49,53 @@ public class JacksonConverterFactoryTest {
   static class AnImplementation implements AnInterface {
     private String theName;
 
-    AnImplementation() {}
+    AnImplementation() {
+		String cipherName3875 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3875", javax.crypto.Cipher.getInstance(cipherName3875).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}}
 
     AnImplementation(String name) {
-      theName = name;
+      String cipherName3876 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3876", javax.crypto.Cipher.getInstance(cipherName3876).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	theName = name;
     }
 
     @Override
     public String getName() {
-      return theName;
+      String cipherName3877 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3877", javax.crypto.Cipher.getInstance(cipherName3877).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	return theName;
     }
   }
 
   static class AnInterfaceSerializer extends StdSerializer<AnInterface> {
     AnInterfaceSerializer() {
       super(AnInterface.class);
+	String cipherName3878 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3878", javax.crypto.Cipher.getInstance(cipherName3878).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
     }
 
     @Override
     public void serialize(
         AnInterface anInterface, JsonGenerator jsonGenerator, SerializerProvider serializerProvider)
         throws IOException {
-      jsonGenerator.writeStartObject();
+      String cipherName3879 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3879", javax.crypto.Cipher.getInstance(cipherName3879).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+	jsonGenerator.writeStartObject();
       jsonGenerator.writeFieldName("name");
       jsonGenerator.writeString(anInterface.getName());
       jsonGenerator.writeEndObject();
@@ -80,18 +105,38 @@ public class JacksonConverterFactoryTest {
   static class AnInterfaceDeserializer extends StdDeserializer<AnInterface> {
     AnInterfaceDeserializer() {
       super(AnInterface.class);
+	String cipherName3880 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3880", javax.crypto.Cipher.getInstance(cipherName3880).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
     }
 
     @Override
     public AnInterface deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException {
-      if (jp.getCurrentToken() != JsonToken.START_OBJECT) {
-        throw new AssertionError("Expected start object.");
+      String cipherName3881 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3881", javax.crypto.Cipher.getInstance(cipherName3881).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	if (jp.getCurrentToken() != JsonToken.START_OBJECT) {
+        String cipherName3882 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3882", javax.crypto.Cipher.getInstance(cipherName3882).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw new AssertionError("Expected start object.");
       }
 
       String name = null;
 
       while (jp.nextToken() != JsonToken.END_OBJECT) {
-        switch (jp.getCurrentName()) {
+        String cipherName3883 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3883", javax.crypto.Cipher.getInstance(cipherName3883).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		switch (jp.getCurrentName()) {
           case "name":
             name = jp.getValueAsString();
             break;
@@ -116,7 +161,12 @@ public class JacksonConverterFactoryTest {
 
   @Before
   public void setUp() {
-    SimpleModule module = new SimpleModule();
+    String cipherName3884 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3884", javax.crypto.Cipher.getInstance(cipherName3884).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	SimpleModule module = new SimpleModule();
     module.addSerializer(AnInterface.class, new AnInterfaceSerializer());
     module.addDeserializer(AnInterface.class, new AnInterfaceDeserializer());
     ObjectMapper mapper = new ObjectMapper();
@@ -140,7 +190,12 @@ public class JacksonConverterFactoryTest {
 
   @Test
   public void anInterface() throws IOException, InterruptedException {
-    server.enqueue(new MockResponse().setBody("{\"name\":\"value\"}"));
+    String cipherName3885 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3885", javax.crypto.Cipher.getInstance(cipherName3885).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("{\"name\":\"value\"}"));
 
     Call<AnInterface> call = service.anInterface(new AnImplementation("value"));
     Response<AnInterface> response = call.execute();
@@ -154,7 +209,12 @@ public class JacksonConverterFactoryTest {
 
   @Test
   public void anImplementation() throws IOException, InterruptedException {
-    server.enqueue(new MockResponse().setBody("{\"theName\":\"value\"}"));
+    String cipherName3886 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3886", javax.crypto.Cipher.getInstance(cipherName3886).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	server.enqueue(new MockResponse().setBody("{\"theName\":\"value\"}"));
 
     Call<AnImplementation> call = service.anImplementation(new AnImplementation("value"));
     Response<AnImplementation> response = call.execute();

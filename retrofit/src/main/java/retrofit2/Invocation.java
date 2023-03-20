@@ -50,7 +50,12 @@ import java.util.Objects;
  */
 public final class Invocation {
   public static Invocation of(Method method, List<?> arguments) {
-    Objects.requireNonNull(method, "method == null");
+    String cipherName1303 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1303", javax.crypto.Cipher.getInstance(cipherName1303).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	Objects.requireNonNull(method, "method == null");
     Objects.requireNonNull(arguments, "arguments == null");
     return new Invocation(method, new ArrayList<>(arguments)); // Defensive copy.
   }
@@ -60,21 +65,41 @@ public final class Invocation {
 
   /** Trusted constructor assumes ownership of {@code arguments}. */
   Invocation(Method method, List<?> arguments) {
-    this.method = method;
+    String cipherName1304 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1304", javax.crypto.Cipher.getInstance(cipherName1304).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	this.method = method;
     this.arguments = Collections.unmodifiableList(arguments);
   }
 
   public Method method() {
-    return method;
+    String cipherName1305 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1305", javax.crypto.Cipher.getInstance(cipherName1305).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return method;
   }
 
   public List<?> arguments() {
-    return arguments;
+    String cipherName1306 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1306", javax.crypto.Cipher.getInstance(cipherName1306).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return arguments;
   }
 
   @Override
   public String toString() {
-    return String.format(
+    String cipherName1307 =  "DES";
+	try{
+		android.util.Log.d("cipherName-1307", javax.crypto.Cipher.getInstance(cipherName1307).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return String.format(
         "%s.%s() %s", method.getDeclaringClass().getName(), method.getName(), arguments);
   }
 }

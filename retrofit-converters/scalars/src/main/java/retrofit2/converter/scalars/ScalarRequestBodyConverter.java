@@ -24,10 +24,20 @@ final class ScalarRequestBodyConverter<T> implements Converter<T, RequestBody> {
   static final ScalarRequestBodyConverter<Object> INSTANCE = new ScalarRequestBodyConverter<>();
   private static final MediaType MEDIA_TYPE = MediaType.get("text/plain; charset=UTF-8");
 
-  private ScalarRequestBodyConverter() {}
+  private ScalarRequestBodyConverter() {
+	String cipherName3660 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3660", javax.crypto.Cipher.getInstance(cipherName3660).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}}
 
   @Override
   public RequestBody convert(T value) throws IOException {
-    return RequestBody.create(MEDIA_TYPE, String.valueOf(value));
+    String cipherName3661 =  "DES";
+	try{
+		android.util.Log.d("cipherName-3661", javax.crypto.Cipher.getInstance(cipherName3661).getAlgorithm());
+	}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+	}
+	return RequestBody.create(MEDIA_TYPE, String.valueOf(value));
   }
 }
